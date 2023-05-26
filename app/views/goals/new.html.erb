@@ -1,0 +1,9 @@
+<h1>Create a New Goal</h1>
+
+<%= simple_form_for(@goal) do |form| %>
+  <%= form.input :goal_name %>
+  <%= form.input :goal_amount %>
+  <%= form.input :goal_balance %>
+
+  <%= form.button :submit, "Create Goal" %>
+<% end %>
