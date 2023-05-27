@@ -1,9 +1,10 @@
+<div class="container">
 <h1>Edit <%= @goal.goal_name %></h1>
 
 <%= simple_form_for(@goal) do |form| %>
   <%= form.input :goal_name %>
   <%= form.input :goal_amount %>
-  <%= form.input :goal_balance %>
 
-  <%= form.button :submit, "Update Goal" %>
+  <%= form.button :submit, "Update Goal", class: "btn btn-primary" %>
 <% end %>
+</div>
