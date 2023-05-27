@@ -4,13 +4,13 @@ class Transaction < ApplicationRecord
 
   # method to calculate the rouded-up value
 
-  def next_value(value)
-    if value.positive?
-      next_integer = value.ceil
-      value_added = next_integer - value
-    elsif value.negative?
-      next_integer = value.floor
-      value_added = value - next_integer
+  def next_value
+    if @transaction_amount.positive?
+      next_integer = @transaction_amount.ceil
+      value_added = next_integer - @transaction_amount
+    elsif @transaction_amount.negative?
+      next_integer = @transaction_amount.floor
+      value_added = @transaction_amount - next_integer
     else
       return [0, 1]
     end
