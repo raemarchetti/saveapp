@@ -1,0 +1,15 @@
+<div class="container">
+<h1><%= @goal.goal_name %></h1>
+
+<p>Amount: <%= number_to_currency(@goal.goal_amount, unit: '$', precision: 2) %></p>
+<p>Balance: <%= number_to_currency(@goal.goal_balance, unit: '$', precision: 2) %></p>
+
+<%= link_to 'Edit', edit_goal_path(@goal), class:'btn btn-primary my-3' %>
+
+<%= simple_form_for @goal, url: goal_path(@goal), method: :delete, data: { confirm: 'Are you sure you want to delete this goal?' } do |form| %>
+  <%= form.button :submit, 'Delete', class: 'btn btn-primary my-3' %>
+<% end %>
+
+<%= link_to 'Back', goals_path, class:'btn btn-primary my-3' %>
+
+</div>
