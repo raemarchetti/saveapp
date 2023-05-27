@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Credit Cards</h1>
+
+  <p>Card Number</p>
+  <p>Expiration Date</p>
+
+    <% @credit_cards.each do |credit_card| %>
+        <p><%= credit_card.card_number %></p>
+        <p><%= credit_card.expiration_date %></p>
+        <p>
+          <%= link_to 'Show', credit_card %>
+          <%= link_to 'Edit', edit_credit_card_path(credit_card) %>
+          <%= button_to 'Delete', credit_card, method: :delete %>
+        </p>
+    <% end %>
+
+<p><%= link_to 'New Credit Card', new_credit_card_path %></p>
+
+</div>
