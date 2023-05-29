@@ -5,7 +5,7 @@ class Transaction < ApplicationRecord
   # method to calculate the rouded-up value
 
   def next_value
-    @transction = Transaction.transaction_amount
+    @transaction = Transaction.transaction_amount
     if @transaction.positive?
       next_integer = @transaction.ceil
       value_added = next_integer - @transaction

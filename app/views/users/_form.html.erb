@@ -1,5 +1,8 @@
 <div class="container">
 <%= simple_form_for :user do |form| %>
+    <%= form.input :email %>
+    <%= form.input :password, autocomplete: "off" %>
+    <%= form.input :password_confirmation, autocomplete: "off" %>
     <%= form.input :name, label: 'Name' %>
     <%= form.input :address, label: 'Address', as: :text %>
     <%= form.input :phone_number, label: 'Phone Number' %>
