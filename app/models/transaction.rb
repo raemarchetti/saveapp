@@ -1,6 +1,8 @@
 class Transaction < ApplicationRecord
   belongs_to :user
-  belongs_to :goal
+  # belongs_to :goal
+
+  validates :transaction_amount, presence: true
 
   # method to calculate the rouded-up value
 

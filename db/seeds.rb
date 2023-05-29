@@ -48,8 +48,8 @@ if Rails.env.development?
     user: User.first,
     transaction_amount: Faker::Commerce.price(range: 10.1..299.99),
     transaction_date: Faker::Date.between(from: 1.year.ago, to: Date.today),
-    transaction_origin: Faker::Company.name,
-    goal_id: Goal.first.id
+    transaction_origin: Faker::Company.name
+    # goal_id: Goal.first.id
   )
   end
 end

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :goals
   resources :users
   resources :credit_cards
-  
+  resources :transactions
+
 end
