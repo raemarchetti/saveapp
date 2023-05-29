@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @user = current_user
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def edit
@@ -13,17 +14,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = current_user
+    @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to edit_user_path, notice: 'Profile was successfully updated.'
+      redirect_to user_path(@user), notice: 'Profile was successfully updated.'
     else
       render :edit
     end
   end
 
-    private
+  private
 
   def user_params
-    params.require(:user).permit(:name, :address, :phone_number, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :address, :phone_number)
   end
 end
