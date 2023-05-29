@@ -3,7 +3,7 @@ class CreateCreditCards < ActiveRecord::Migration[7.0]
     create_table :credit_cards do |t|
       t.string :card_number
       t.string :card_holder_name
-      t.date :expiration_date
+      t.string :expiration_date
       t.string :cvv
       t.references :user, null: false, foreign_key: true
 
