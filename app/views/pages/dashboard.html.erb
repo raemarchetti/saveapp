@@ -17,7 +17,7 @@
             <% @transaction = Transaction.all %>
             <% sum = [] %>
             <% @transaction.each do |element| %>
-              <p><%= element.transaction_amount %> | <%= element.next_value[0] %></p>
+              <p><%= element.transaction_date.strftime('%d %b %Y') %> | <%= element.transaction_origin %> | <%= element.next_value[0] %></p>
               <% sum << element.next_value[0] %>
             <% end %>
 
