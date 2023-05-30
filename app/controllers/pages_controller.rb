@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
     @goals = Goal.last(3)
   end
+
+  def profile
+    @user = current_user
+  end
 end

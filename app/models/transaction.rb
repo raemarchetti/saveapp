@@ -1,6 +1,5 @@
 class Transaction < ApplicationRecord
-  belongs_to :user
-  # belongs_to :goal
+  belongs_to :credit_card
 
   validates :transaction_amount, presence: true
 

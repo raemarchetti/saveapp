@@ -11,25 +11,25 @@ require 'faker'
 if Rails.env.development?
 
   Transaction.destroy_all
-  # CreditCard.destroy_all
-  # Goal.destroy_all
-  # User.destroy_all
+  CreditCard.destroy_all
+  Goal.destroy_all
+  User.destroy_all
 
-  # user = User.create!(
-  #   email: "test@admin.test",
-  #   password: 'password',
-  #   name: 'Jane Doe',
-  #   address: Faker::Address.unique.full_address,
-  #   phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
-  # )
+  user = User.create!(
+    email: "test@admin.test",
+    password: 'password',
+    name: 'Jane Doe',
+    address: Faker::Address.unique.full_address,
+    phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
+  )
 
-  # user = User.create!(
-  #   email: Faker::Internet.email,
-  #   password: 'password',
-  #   name: Faker::Name.name,
-  #   address: Faker::Address.unique.full_address,
-  #   phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
-  #  )
+  # # # user = User.create!(
+  # # #   email: Faker::Internet.email,
+  # # #   password: 'password',
+  # # #   name: Faker::Name.name,
+  # # #   address: Faker::Address.unique.full_address,
+  # # #   phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
+  # #  )
 
   # credit_card = CreditCard.create!(
   #   card_number: Faker::Stripe.valid_card,
