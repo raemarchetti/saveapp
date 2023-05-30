@@ -1,0 +1,8 @@
+<h1>User Profile</h1>
+  <p>Name: <%= @user.name %></p>
+  <p>Email: <%= @user.email %></p>
+  <p>Password: <%= @user.password %></p>
+  <p>Address: <%= @user.address %></p>
+  <p>Phone Number: <%= @user.phone_number %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %>
