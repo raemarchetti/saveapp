@@ -1,6 +1,5 @@
 class Transaction < ApplicationRecord
-  belongs_to :user
-  # belongs_to :goal
+  belongs_to :credit_card
 
   def next_value
     @value = self.transaction_amount

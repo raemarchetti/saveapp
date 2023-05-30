@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show]
 
   def index
-    @transactions = Transaction.where(user: current_user)
+    @transactions = Transaction.where(credit_card: current_user.credit_cards.first)
   end
 
   def create

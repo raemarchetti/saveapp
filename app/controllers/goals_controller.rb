@@ -2,7 +2,7 @@ class GoalsController < ApplicationController
   before_action :set_goal, only: %i[show edit destroy update]
 
   def index
-    @goals = Goal.all
+    @goals = Goal.where(user: current_user)
   end
 
   def new
@@ -20,15 +20,12 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = Goal.find(params[:id])
   end
 
   def edit
-    @goal = Goal.find(params[:id])
   end
 
   def update
-    @goal = Goal.find(params[:id])
     if @goal.update(goal_params)
       redirect_to goals_path, notice: 'Goal updated successfully.'
     else
@@ -37,7 +34,6 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @goal = Goal.find(params[:id])
     @goal.destroy
     redirect_to goals_path, notice: 'Goal deleted successfully.'
   end
