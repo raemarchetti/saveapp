@@ -11,17 +11,17 @@ require 'faker'
 if Rails.env.development?
 
   Transaction.destroy_all
-  CreditCard.destroy_all
-  Goal.destroy_all
-  User.destroy_all
+  # CreditCard.destroy_all
+  # Goal.destroy_all
+  # User.destroy_all
 
-  user = User.create!(
-    email: "test@admin.test",
-    password: 'password',
-    name: 'Jane Doe',
-    address: Faker::Address.unique.full_address,
-    phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
-  )
+  # user = User.create!(
+  #   email: "test@admin.test",
+  #   password: 'password',
+  #   name: 'Jane Doe',
+  #   address: Faker::Address.unique.full_address,
+  #   phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
+  # )
 
   # user = User.create!(
   #   email: Faker::Internet.email,
@@ -31,25 +31,25 @@ if Rails.env.development?
   #   phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
   #  )
 
-  credit_card = CreditCard.create!(
-    card_number: Faker::Stripe.valid_card,
-    card_holder_name: user.name,
-    expiration_date: Faker::Date.between(from: Date.today, to: 10.years.from_now).strftime('%m/%y'),
-    cvv: Faker::Stripe.ccv,
-    user_id: user.id
-    )
+  # credit_card = CreditCard.create!(
+  #   card_number: Faker::Stripe.valid_card,
+  #   card_holder_name: user.name,
+  #   expiration_date: Faker::Date.between(from: Date.today, to: 10.years.from_now).strftime('%m/%y'),
+  #   cvv: Faker::Stripe.ccv,
+  #   user_id: user.id
+  #   )
 
-  goal = [
-     Goal.create!(goal_name: 'travel', user: user, goal_amount: Faker::Number.between(from: 200.0, to: 3000.0), goal_balance: 0)
-  ]
+  # goal = [
+  #    Goal.create!(goal_name: 'travel', user: user, goal_amount: Faker::Number.between(from: 200.0, to: 3000.0), goal_balance: 0)
+  # ]
 
-  10.times do
-    transaction = Transaction.create!(
-    user: User.first,
-    transaction_amount: Faker::Commerce.price(range: 10.1..299.99),
-    transaction_date: Faker::Date.between(from: 1.year.ago, to: Date.today),
-    transaction_origin: Faker::Company.name,
-    goal_id: Goal.first.id
-  )
-  end
+  # 10.times do
+  #   transaction = Transaction.create!(
+  #   user: User.first,
+  #   transaction_amount: Faker::Commerce.price(range: 10.1..299.99),
+  #   transaction_date: Faker::Date.between(from: 1.year.ago, to: Date.today),
+  #   transaction_origin: Faker::Company.name
+  #   # goal_id: Goal.first.id
+  # )
+  # end
 end
