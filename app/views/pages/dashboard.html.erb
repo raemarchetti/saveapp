@@ -14,14 +14,15 @@
 
           <div class="container">
             <h4>Saving Balance</h4>
-            <% @transction = Transaction.all %>
-            <% @transction.each do |tsn| %>
-              <p><%= tsn.transaction_amount %> | <%= next_value(tsn.transaction_amount) %></p>
+            <% @transaction = Transaction.all %>
+            <% sum = [] %>
+            <% @transaction.each do |element| %>
+              <p><%= element.transaction_amount %> | <%= element.next_value[0] %></p>
+              <% sum << element.next_value[0] %>
             <% end %>
+
+            <h5>Balance: $ <%= sum.sum  %> </h5>
           </div>
-
-
-
 
     </div>
   </div>
