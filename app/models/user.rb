@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :credit_cards
+  has_many :goals
   has_many :transactions
 
   after_create :create_initial_transactions
