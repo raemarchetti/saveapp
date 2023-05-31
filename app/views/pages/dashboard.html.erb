@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 p-5">
+
+      <h2><%= current_user.name %>'s DashBoard </h2>
+        <h4>Card Center</h4>
+          <div class="container">
+
+            <% @credit_cards = CreditCard.all %>
+            <% @credit_cards.each do |credit_card| %>
+                <p>Card ID: <%= credit_card.id %> | <%= credit_card.card_number %></p>
+            <% end %>
+          </div>
+
+          <div class="container">
+            <h4>Saving Balance</h4>
+            <% @transaction = Transaction.all %>
+            <% sum = [] %>
+            <% @transaction.each do |element| %>
+              <p><%= element.transaction_date.strftime('%d %b %Y') %> | <%= element.transaction_origin %> | <%= element.next_value[0] %></p>
+              <% sum << element.next_value[0] %>
+            <% end %>
+
+            <h5>Balance: $ <%= sum.sum  %> </h5>
+          </div>
+
+    </div>
+  </div>
+</div>
