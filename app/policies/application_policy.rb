@@ -9,15 +9,15 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    is_owner?
   end
 
   def show?
-    false
+    is_owner?
   end
 
   def create?
-    false
+    true
   end
 
   def new?
@@ -25,7 +25,7 @@ class ApplicationPolicy
   end
 
   def update?
-    false
+    is_owner?
   end
 
   def edit?
@@ -33,7 +33,12 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    is_owner?
+  end
+
+  private
+  def is_owner?
+    record.user == user
   end
 
   class Scope

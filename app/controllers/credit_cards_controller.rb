@@ -9,6 +9,7 @@ class CreditCardsController < ApplicationController
 
   def new
     @credit_card = CreditCard.new
+    authorize @credit_card
   end
 
   def create
@@ -20,16 +21,20 @@ class CreditCardsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @credit_card
   end
 
   def show
+    authorize @credit_card
   end
 
   def edit
+    authorize @credit_card
   end
 
   # If User decide to change an information on the credit card (ex.wrong info)
   def update
+    authorize @credit_card
     if @credit_card.update(credit_card_params)
       redirect_to credit_card_path, notice: 'Credit card was successfully updated.'
     else
@@ -38,6 +43,7 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy
+    authorize @credit_card
     @credit_card.destroy
     redirect_to credit_cards_path, notice: 'Credit card was successfully destroyed.'
   end
