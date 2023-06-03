@@ -53,28 +53,28 @@ if Rails.env.development?
     transaction_amount: 68.50,
     transaction_date: Date.today,
     transaction_origin: 'Zara',
-    credit_card_id: 1
+    credit_card_id: credit_card.id
   )
 
   transaction = Transaction.create!(
     transaction_amount: 25.15,
     transaction_date: Date.today - 1,
     transaction_origin: 'Netflix',
-    credit_card_id: 1
+    credit_card_id: credit_card.id
   )
 
   transaction = Transaction.create!(
     transaction_amount: 15.10,
     transaction_date: Date.today - 1,
     transaction_origin: 'Teddy`s Bar',
-    credit_card_id: 1
+    credit_card_id: credit_card.id
   )
 
   transaction = Transaction.create!(
     transaction_amount: 188.18,
     transaction_date: Date.today - 2,
     transaction_origin: 'Leroy Merlin',
-    credit_card_id: 1
+    credit_card_id: credit_card.id
   )
 
   # # # <<Create transactions with Faker gem>>
@@ -83,7 +83,7 @@ if Rails.env.development?
     transaction_amount: Faker::Commerce.price(range: 10.1..299.99),
     transaction_date: Faker::Date.between(from: 1.week.ago, to: Date.today),
     transaction_origin: Faker::Company.name,
-    credit_card_id: 1
+    credit_card_id: credit_card.id
     # goal_id: Goal.first.id
   )
   end
