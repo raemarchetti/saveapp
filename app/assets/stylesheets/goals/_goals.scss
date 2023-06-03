@@ -1,0 +1,110 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.container-goal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // font-family: 'Nunito', sans-serif;
+}
+
+.title button{
+  border: none;
+  background-color: transparent;
+}
+
+.title button:hover{
+  border: none;
+  box-shadow: 0px 0.25rem 1rem #75AFFF;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  gap: 1rem;
+  width: 100vw;
+}
+
+.question{
+  font-size: 1.4rem;
+  letter-spacing: 0.3px;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.objectives{
+  display: flex;
+  gap: 1rem;
+}
+
+.objectives button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 92px;
+  height: 63px;
+  left: 30px;
+  top: 177px;
+  color: white;
+  font-size: smaller;
+  line-height: 19px;
+  background: #005CEE;
+  box-shadow: 0px 0.25rem 1rem #75AFFF;
+  border: none;
+  border-radius: 12px;
+}
+
+.goal-form{
+  margin-top: 2rem;
+  width: 90%;
+}
+
+.form{
+  display: flex;
+  align-content: left;
+  align-items: left;
+}
+
+.form-control{
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #32a1ce;
+}
+
+.container-goal footer{
+  bottom: 1rem;
+  position: absolute;
+}
+
+footer p{
+  color: #D9D9D9;
+  padding: 1rem 0 1rem 0;
+  margin: 0;
+  text-align: left;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  max-width: 23.3rem;
+  text-align: center;
+}
+
+footer button{
+  color: white;
+  background: #005CEE;
+  box-shadow: 0px 0.25rem 1rem #75AFFF;
+  border-radius: 12px;
+  width: 90vw;
+  padding: 1rem 0 1rem 0;
+  margin: 0;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border: none;
+}
