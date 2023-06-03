@@ -1,3 +1,4 @@
+<%# sign up page %>
 <div class="form-container">
 <h2 class="form-heading">Sign up</h2>
 
@@ -19,8 +20,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
   </div>
 <% end %>
  <div class="form-links">
 <%= render "devise/shared/links" %>
+</div>
