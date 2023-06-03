@@ -1,9 +1,40 @@
-<div class="container">
-<h1>Your Goals</h1>
-
-<ul>
-  <% @goals.each do |goal| %>
-    <li><%= link_to goal.goal_name, goal %></li>
-  <% end %>
-</ul>
-</div>
+<body>
+  <div class="container-goal">
+    <div class="title">
+      <button>
+        <%= image_tag "left-arrow.svg", alt: "left-arrow", size: "" %>
+      </button>
+      <button>
+        <%= image_tag "question.svg", alt: "question mark" %>
+      </button>
+  </div>
+  <div class="question">
+    <p>What's your goal?</p>
+  </div>
+  <div class="objectives">
+    <button>Buy a Home
+      <%= image_tag "house.svg", alt: "house" %>
+    </button>
+    <button>Travel
+      <%= image_tag "world.svg", alt: "world map" %>
+    </button>
+    <button>Emergency
+      <%= image_tag "cash.svg", alt: "cash" %>
+    </button>
+  </div>
+    <form class="goal-form">
+      <div class="mb-3">
+        <label for="formCustomGoal" class="form-label">Custom Goal</label>
+          <input type="text" class="form-control" id="nameGoal" placeholder="Name your goal">
+      </div>
+    <div class="mb-3">
+      <label for="formvalueGoal" class="form-label">What is your goal amount?</label>
+        <input type="text" class="form-control" id="valueGoal" placeholder="$$$">
+    </div>
+  </form>
+    <footer>
+      <p>By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions</p>
+      <button type="submit">Make your dreams come true!</button>
+    </footer>
+  </div>
+</body>
