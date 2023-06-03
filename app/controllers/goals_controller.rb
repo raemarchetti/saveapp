@@ -2,11 +2,13 @@ class GoalsController < ApplicationController
   before_action :set_goal, only: %i[show edit destroy update]
 
   def index
-    @goals = Goal.where(user: current_user)
+    # @goals = Goal.where(user: current_user)
+    goals = policy_scope(Goal)
   end
 
   def new
     @goal = Goal.new
+    authorize @goal
   end
 
   def create
@@ -17,6 +19,7 @@ class GoalsController < ApplicationController
     else
       render :new, status: :unprocessable_entity, notice: 'Failed to create'
     end
+    authorize @goal
   end
 
   def show
@@ -46,6 +49,7 @@ class GoalsController < ApplicationController
 
   def set_goal
     @goal = Goal.find(params[:id])
+    authorize @goal
   end
 
 end

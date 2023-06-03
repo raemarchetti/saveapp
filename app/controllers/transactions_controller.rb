@@ -4,6 +4,7 @@ class TransactionsController < ApplicationController
 
   def index
     @transactions = Transaction.where(credit_card: current_user.credit_cards.first)
+    authorize @transaction
   end
 
   def create
@@ -15,9 +16,12 @@ class TransactionsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
+    authorize @transaction
   end
 
   def show
+    authorize @transaction
   end
 
   private

@@ -4,11 +4,13 @@ class CreditCardsController < ApplicationController
 
   def index
     # @credit_cards = CreditCard.all
+    # @credit_cards = policy_scope(CreditCard)
     # add a filter for user, when more than 1 credit_card
   end
 
   def new
     @credit_card = CreditCard.new
+    authorize @credit_card
   end
 
   def create
@@ -20,6 +22,7 @@ class CreditCardsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @credit_card
   end
 
   def show
@@ -50,6 +53,7 @@ class CreditCardsController < ApplicationController
 
   def set_credit_card
     @credit_card = CreditCard.find(params[:id])
+    authorize @credit_card
   end
 
   def credit_card_params
