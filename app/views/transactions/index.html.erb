@@ -1,9 +1,0 @@
-<div class="container">
-<h1>Your Transactions</h1>
-
-<ul>
-  <% @transactions.each do |transaction| %>
-    <li><%= link_to transaction.transaction_origin, transaction %></li>
-  <% end %>
-</ul>
-</div>

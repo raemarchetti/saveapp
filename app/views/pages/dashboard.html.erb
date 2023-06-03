@@ -14,7 +14,7 @@
 
           <div class="container">
             <h4>Saving Balance</h4>
-            <% @transaction = Transaction.all %>
+            <% @transaction = Operation.all %>
             <% sum = [] %>
             <% @transaction.each do |element| %>
               <p><%= element.transaction_date.strftime('%d %b %Y') %> | <%= element.transaction_origin %> | <%= element.next_value[0] %></p>

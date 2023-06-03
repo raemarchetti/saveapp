@@ -6,7 +6,14 @@ Rails.application.routes.draw do
   get "welcome", to: "pages#welcome", as: :welcome
 
   resources :goals
+
   resources :credit_cards
   # , except: :index
   resources :transactions
+  resources :credit_cards, except: :index do
+    resources :operations, only: [:index, :new, :create]
+  end
+
+  resources :operations, only: [:edit, :update, :show, :destroy]
+  resources :roundups
 end
