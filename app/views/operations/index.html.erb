@@ -3,7 +3,7 @@
 
 <ul>
   <% @operations.each do |operation| %>
-    <li><%= link_to operation.transaction_origin, operation %></li>
+    <li><%= link_to operation.operation_origin, operation %> || <%= operation.next_value[0] %></li>
   <% end %>
 </ul>
 </div>

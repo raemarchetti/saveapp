@@ -65,48 +65,62 @@ user = User.create!(
   # #  )
 
   # # # <<Create goals with pre-set parameters>>
-  # goal = [
-  #    Goal.create!(goal_name: 'travel', user: user, goal_amount: Faker::Number.between(from: 200.0, to: 3000.0), goal_balance: 0)
-  # ]
+  goal =
+     Goal.create!(
+      goal_name: 'travel', user: user, goal_amount: Faker::Number.between(from: 200.0, to: 3000.0), goal_balance: 0
+    )
 
   # # # <<Create transactions with pre-set parameters>>
-  transaction = Operation.create!(
-    transaction_amount: 68.50,
-    transaction_date: Date.today,
-    transaction_origin: 'Zara',
-    credit_card_id: credit_card.id
+  operation = Operation.create!(
+    operation_amount: 68.50,
+    operation_date: Date.today,
+    operation_origin: 'Zara',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card: credit_card,
+    goal: goal
   )
 
-  transaction = Operation.create!(
-    transaction_amount: 25.15,
-    transaction_date: Date.today - 1,
-    transaction_origin: 'Netflix',
-    credit_card_id: credit_card.id
+  operation = Operation.create!(
+    operation_amount: 25.15,
+    operation_date: Date.today - 1,
+    operation_origin: 'Netflix',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card: credit_card,
+    goal: goal
   )
 
-  transaction = Operation.create!(
-    transaction_amount: 15.10,
-    transaction_date: Date.today - 1,
-    transaction_origin: 'Teddy`s Bar',
-    credit_card_id: credit_card.id
+  operation = Operation.create!(
+    operation_amount: 15.10,
+    operation_date: Date.today - 1,
+    operation_origin: 'Teddy`s Bar',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card: credit_card,
+    goal: goal
   )
 
-
-  transaction = Operation.create!(
-    transaction_amount: 188.18,
-    transaction_date: Date.today - 2,
-    transaction_origin: 'Leroy Merlin',
-    credit_card_id: credit_card.id
+  operation = Operation.create!(
+    operation_amount: 188.18,
+    operation_date: Date.today - 2,
+    operation_origin: 'Leroy Merlin',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card_id: credit_card.id,
+    goal: goal
   )
 
-  # # # <<Create transactions with Faker gem>>
+  # # # <<Create operations with Faker gem>>
   10.times do
-    transaction = Operation.create!(
-    transaction_amount: Faker::Commerce.price(range: 10.1..299.99),
-    transaction_date: Faker::Date.between(from: 1.week.ago, to: Date.today),
-    transaction_origin: Faker::Company.name,
-    credit_card_id: credit_card.id
-    # goal_id: Goal.first.id
+    operation = Operation.create!(
+    operation_amount: Faker::Commerce.price(range: 10.1..299.99),
+    operation_date: Faker::Date.between(from: 1.week.ago, to: Date.today),
+    operation_origin: Faker::Company.name,
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card: credit_card,
+    goal: goal
   )
   end
 end
