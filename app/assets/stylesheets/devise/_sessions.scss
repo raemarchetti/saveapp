@@ -1,7 +1,6 @@
 /* Global Styles */
 body {
   background-color: #f5f5f5;
-  font-family: Arial, sans-serif;
 }
 
 /* Form Container */
@@ -11,7 +10,7 @@ body {
   padding: 40px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-heading {
@@ -42,7 +41,7 @@ body {
 }
 
 .input-field::placeholder {
-  color: #999;
+  color: $light-gray;
 }
 /* Remember Me Checkbox */
 .remember-me {
@@ -54,7 +53,7 @@ body {
 .remember-me-label {
   margin-left: 8px;
   font-size: 14px;
-  color: #666;
+  color: $medium-gray;
 }
 
 /* Form Actions */
@@ -65,7 +64,7 @@ body {
 .btn-primary {
   padding: 12px 20px;
   font-size: 18px;
-  background-color: #007bff;
+  background-color: $blue;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -73,7 +72,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: $blue;
 }
 
 /* Links */
@@ -89,5 +88,5 @@ body {
 
 .form-links a:hover {
   color: #333;
-  text-decoration: underline;
+  text-decoration: none;
 }
