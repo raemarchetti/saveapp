@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :credit_cards
   has_many :goals
-  has_many :transactions, through: :credit_cards
+  has_many :operations, through: :credit_cards
 
 end

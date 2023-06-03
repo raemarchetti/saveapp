@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   get "profile", to: "pages#profile", as: :profile
   resources :goals
-  resources :credit_cards, except: :index
-  resources :transactions
+  resources :credit_cards, except: :index do
+    resources :operations, only: [:index, :new, :create]
+  end
+
+  resources :operations, only: [:edit, :update, :show, :destroy]
+  resources :roundups
 end
