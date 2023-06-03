@@ -1,40 +1,40 @@
-<body>
+<div data-controller="objectives">
   <div class="container-goal">
     <div class="title">
       <button>
-        <%= image_tag "left-arrow.svg", alt: "left-arrow", size: "" %>
+        <%= link_to image_tag("left-arrow.svg", alt: "left-arrow", size: ""), welcome_path %>
       </button>
       <button>
-        <%= image_tag "question.svg", alt: "question mark" %>
+        <%= link_to image_tag("question.svg", alt: "question mark"), welcome_path %>
       </button>
   </div>
   <div class="question">
     <p>What's your goal?</p>
   </div>
   <div class="objectives">
-    <button>Buy a Home
+    <button data-action="click->objectives#home" >Buy a Home
       <%= image_tag "house.svg", alt: "house" %>
     </button>
-    <button>Travel
+    <button data-action="click->objectives#travel">Travel
       <%= image_tag "world.svg", alt: "world map" %>
     </button>
-    <button>Emergency
+    <button data-action="click->objectives#emergency">Emergency
       <%= image_tag "cash.svg", alt: "cash" %>
     </button>
   </div>
     <form class="goal-form">
       <div class="mb-3">
         <label for="formCustomGoal" class="form-label">Custom Goal</label>
-          <input type="text" class="form-control" id="nameGoal" placeholder="Name your goal">
+          <input type="text" class="form-control" id="nameGoal" placeholder="Name your goal" data-objectives-target="goal">
       </div>
     <div class="mb-3">
       <label for="formvalueGoal" class="form-label">What is your goal amount?</label>
         <input type="text" class="form-control" id="valueGoal" placeholder="$$$">
     </div>
-  </form>
-    <footer>
-      <p>By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions</p>
-      <button type="submit">Make your dreams come true!</button>
-    </footer>
+   </form>
+
+    <p>By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions</p>
+    <button type="submit" class="btn btn-flat" >Make your dreams come true!</button>
+
   </div>
-</body>
+</div>
