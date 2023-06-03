@@ -12,11 +12,46 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "home", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%# <%= link_to "Contact", "#", class: "nav-link" data-bs-toggle="modal" data-bs-target="#modal-contact" href="#" %>
+            <%= link_to "Contact", "#", class: "nav-link", "data-bs-toggle": "modal", "data-bs-target": "#modal-contact", href: "#" %>
           </li>
+        <%# Modal %>
+        <div class="modal fade" id="modal-contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Contact us</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+            <div class="modal-body">
+           <form>
+             <div class="mb-3">
+               <label for="formGroupExampleInput" class="form-label">Your name</label>
+               <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Insert your name here">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Your email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@example.com">
+              <div id="emailHelp" class="form-text">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Leave your comment here</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="" rows="3"></textarea>
+            </div>
+            <footer class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send</button>
+            </footer>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+         <%# List %>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "avatar.png", class: "avatar", alt: "dropdown menu" %>
