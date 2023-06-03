@@ -1,5 +1,6 @@
-class Transaction < ApplicationRecord
+class Operation < ApplicationRecord
   belongs_to :credit_card
+  belongs_to :roundup
 
   def next_value
     @value = self.transaction_amount

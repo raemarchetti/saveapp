@@ -1,0 +1,92 @@
+/* Global Styles */
+body {
+  background-color: #f5f5f5;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Form Inputs */
+.form-inputs {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.input-field:focus {
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.input-field::placeholder {
+  color: $light-gray;
+}
+/* Remember Me Checkbox */
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.remember-me-label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: $medium-gray;
+}
+
+/* Form Actions */
+.form-actions {
+  text-align: center;
+}
+
+.btn-primary {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: $blue;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: $blue;
+}
+
+/* Links */
+.form-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.form-links a:hover {
+  color: #333;
+  text-decoration: none;
+}

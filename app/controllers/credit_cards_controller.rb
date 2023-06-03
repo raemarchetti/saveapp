@@ -3,7 +3,7 @@ class CreditCardsController < ApplicationController
   before_action :set_credit_card, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @credit_cards = CreditCard.all
+    @credit_cards = CreditCard.all
     # add a filter for user, when more than 1 credit_card
   end
 
