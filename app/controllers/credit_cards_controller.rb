@@ -4,6 +4,7 @@ class CreditCardsController < ApplicationController
 
   def index
     # @credit_cards = CreditCard.all
+    # @credit_cards = policy_scope(CreditCard)
     # add a filter for user, when more than 1 credit_card
   end
 
@@ -25,16 +26,13 @@ class CreditCardsController < ApplicationController
   end
 
   def show
-    authorize @credit_card
   end
 
   def edit
-    authorize @credit_card
   end
 
   # If User decide to change an information on the credit card (ex.wrong info)
   def update
-    authorize @credit_card
     if @credit_card.update(credit_card_params)
       redirect_to credit_card_path, notice: 'Credit card was successfully updated.'
     else
@@ -43,7 +41,6 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy
-    authorize @credit_card
     @credit_card.destroy
     redirect_to credit_cards_path, notice: 'Credit card was successfully destroyed.'
   end
@@ -56,6 +53,7 @@ class CreditCardsController < ApplicationController
 
   def set_credit_card
     @credit_card = CreditCard.find(params[:id])
+    authorize @credit_card
   end
 
   def credit_card_params
