@@ -1,0 +1,124 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.container-card{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  // font-family: 'Nunito', sans-serif;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  gap: 1rem;
+  font-size: 1rem;
+  width: 100vw;
+}
+
+.title p{
+  margin: 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.3px;
+}
+
+.title button{
+  border: none;
+  background-color: transparent;
+}
+
+.title button:hover{
+  border: none;
+  box-shadow: 0px 0.25rem 1rem #75AFFF;
+}
+
+.btn-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .btn-card button{
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 200px;
+  height: 200px;
+  background-color: #f2f2f2;
+  margin-right: 10px;
+  margin-left: 1.5rem;
+  padding: 2rem;
+  font-size: x-large;
+  gap: 1rem;
+  color: #ffffff;
+  font-weight: bolder;
+} */
+
+.btn-card button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #1b1d51;
+  font-size: x-large;
+  background: linear-gradient(145deg, #0062ff, #0053d6);
+  border: none;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 8px #0043ae, -1px -1px 8px #0075ff;
+  transition: all .1s;
+}
+
+.btn-card button:active {
+  box-shadow: 1px 4px 1px rgba(27, 18, 197, 0.922);
+  position: relative;
+  top: 2px;
+}
+
+.details {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.details p{
+  font-size: 1.2rem;
+}
+
+.list-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  width: 375px;
+  height: 372px;
+  left: 1px;
+  top: 436px;
+}
+
+.list-card div{
+  color: #717E95;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #32a1ce;
+}
+
+.list-card div p{
+  padding: 0;
+  margin: 0;
+}
