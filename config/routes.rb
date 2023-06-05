@@ -14,6 +14,5 @@ Rails.application.routes.draw do
     resources :operations, only: [:index, :new, :create]
   end
 
-  resources :operations, only: [:edit, :update, :show, :destroy]
-  resources :roundups
+  resources :operations, only: :show
 end
