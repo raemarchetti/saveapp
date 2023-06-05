@@ -1,5 +1,65 @@
 <div class="container">
-<h1>Create a New Goal</h1>
+<%# <h1>Create a New Goal</h1>
 
 <%= render "form", goal: @goal %>
+</div>
+
+<div data-controller="objectives">
+  <div class="container-goal">
+    <div class="title">
+      <button>
+        <%= link_to image_tag("left-arrow.svg", alt: "left-arrow", size: ""), welcome_path %>
+      </button>
+      <button>
+        <%= link_to image_tag("question.svg", alt: "question mark"), welcome_path %>
+      </button>
+  </div>
+  <div class="question">
+    <p>What's your goal?</p>
+  </div>
+  <div class="objectives">
+    <button data-action="click->objectives#home" >Buy a Home
+      <%= image_tag "house.svg", alt: "house" %>
+    </button>
+    <button data-action="click->objectives#travel">Travel
+      <%= image_tag "world.svg", alt: "world map" %>
+    </button>
+    <button data-action="click->objectives#emergency">Emergency
+      <%= image_tag "cash.svg", alt: "cash" %>
+    </button>
+  </div>
+    <form class="goal-form">
+      <div class="mb-3">
+        <label for="formCustomGoal" class="form-label">Custom Goal</label>
+          <input type="text" class="form-control" id="nameGoal" placeholder="Name your goal" data-objectives-target="goal">
+      </div>
+    <div class="mb-3">
+      <label for="formvalueGoal" class="form-label">What is your goal amount?</label>
+        <input type="text" class="form-control" id="valueGoal" placeholder="$$$">
+    </div>
+     <p>By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions</p>
+
+    <button type="submit" class="btn btn-flat" >Make your dreams come true!</button>
+   </form>
+
+
+ <%# falta fazer o autocompletar o goal name %>
+
+<div class="container mt-4 data-controller="objectives"">
+  <div class="row">
+    <div class="col-6 m-auto">
+      <div class="goal-form" data-objectives-target="goal">
+        <%= simple_form_for(@goal, url: goals_path, local: true) do |form| %>
+        <%= form.input :goal_name %>
+        <%= form.input :goal_amount, as: :decimal, input_html: { step: '0.01' } %>
+      </div>
+      <div class="goal-form">
+        <%= form.button :submit, 'Create Goal', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+  </div>
 </div>
