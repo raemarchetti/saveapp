@@ -6,9 +6,9 @@
         <%= form.input :goal_name, input_html:  { data: { target: "objectives.goal" } } %>
         <%= form.input :goal_amount, as: :decimal, input_html: { step: '0.01' } %>
       </div>
-      <div class="goal-form">
+
         <%= form.button :submit, 'Create Goal', class: 'btn btn-primary' %>
-      </div>
+    
     <% end %>
     </div>
   </div>

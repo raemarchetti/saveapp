@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_03_145459) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_03_195903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,16 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_145459) do
     t.decimal "roundup_amount"
     t.bigint "goal_id"
     t.index ["credit_card_id"], name: "index_operations_on_credit_card_id"
-  end
-
-  create_table "roundups", force: :cascade do |t|
-    t.decimal "roundup_amount"
-    t.decimal "transaction_amount"
-    t.decimal "transaction_ceil"
-    t.bigint "operation_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["operation_id"], name: "index_roundups_on_operation_id"
+    t.index ["goal_id"], name: "index_operations_on_goal_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,5 +67,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_145459) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "operations", "credit_cards"
-  add_foreign_key "roundups", "operations"
+  add_foreign_key "operations", "goals"
 end
