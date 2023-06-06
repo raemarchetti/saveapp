@@ -1,14 +1,25 @@
-<div class="container">
+<div class="container-goal">
+   <div class="title">
+     <button>
+       <%= image_tag "left-arrow.svg", alt: "left-arrow", size: "" %>
+     </button>
+     <button>
+       <%= image_tag "question.svg", alt: "question mark" %>
+     </button>
+  </div>
 
-<h3>Goals</h3>
-<% if @goals %>
+  <% if @goals %>
+    <h3>Find out your goals here.</h3>
+    <hr>
   <% @goals.each do |goal| %>
       <p><%= goal.goal_name %></p>
       <p>$<%= goal.goal_amount.round(2) %></p>
       <p>$<%= goal.goal_amount.round(2) %></p>
     <% end %>
   <% else %>
-    <h3>Create your first goal.</h3>
+    <h3>Let's create your first goal!</h3>
 <% end %>
+
 <%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary' %>
+
 </div>

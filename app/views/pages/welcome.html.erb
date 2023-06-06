@@ -1,8 +1,9 @@
 <body>
 <div class="container-home">
   <div class="box-home">
-    <%= image_tag('saveapp_logo.png', alt: 'saveapp logo', size: '300x160') %>
-      <p>Save effortlessly, invest wisely</p>
+    <%# <%= image_tag('saveapp_logo.png', alt: 'saveapp logo', size: '300x160') %>
+    <%= video_tag "saveapp_motion.mp4", autoplay: true, muted: true, loop: true, class: "", size: "400x260" %>
+      <p>Save effortlessly</p>
   </div>
     <footer>
       <%= link_to "Get Started", goals_path, class: "btn btn-flat" %>

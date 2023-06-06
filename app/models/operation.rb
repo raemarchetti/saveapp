@@ -1,9 +1,9 @@
 class Operation < ApplicationRecord
   belongs_to :credit_card
-  belongs_to :roundup
+  belongs_to :goal
 
   def next_value
-    @value = self.transaction_amount
+    @value = self.operation_amount
     if @value > 0
       next_integer = @value.ceil
       value_added = next_integer - @value
@@ -14,5 +14,5 @@ class Operation < ApplicationRecord
     [value_added.round(2), next_integer]
   end
 
-  validates :transaction_amount, presence: true
+  validates :operation_amount, presence: true
 end

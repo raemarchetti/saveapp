@@ -1,9 +1,9 @@
 <div class="container">
-<h1><%= @operation.transaction_origin %></h1>
+<h1><%= @operation.operation_origin %></h1>
 
-<p>Amount: <%= number_to_currency(@operation.transaction_amount, unit: '$', precision: 2) %></p>
-<p>Date: <%= @operation.transaction_date %></p>
+<p>Amount: <%= number_to_currency(@operation.operation_amount, unit: '$', precision: 2) %></p>
+<p>Date: <%= @operation.operation_date %></p>
 
-<%# <%= link_to 'Back', operations_path, class:'btn btn-primary my-3' %> 
+<%# <%= link_to 'Back', operations_path, class:'btn btn-primary my-3' %>
 
 </div>

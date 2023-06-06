@@ -14,10 +14,10 @@
 
           <div class="container">
             <h4>Saving Balance</h4>
-            <% @transaction = Operation.all %>
+            <% @operation = Operation.all %>
             <% sum = [] %>
-            <% @transaction.each do |element| %>
-              <p><%= element.transaction_date.strftime('%d %b %Y') %> | <%= element.transaction_origin %> | <%= element.next_value[0] %></p>
+            <% @operation.each do |element| %>
+              <p><%= element.operation_date.strftime('%d %b %Y') %> | <%= element.operation_origin %> | <%= element.next_value[0] %></p>
               <% sum << element.next_value[0] %>
             <% end %>
 

@@ -1,10 +1,11 @@
-
-<div class="row justify-content-center">
-  <div class="col-8">
-
-    <h3>Aqui vai aquele banner vendedor de sucesso!</h3>
-    <p><%= link_to 'Login', new_user_session_path, class:'btn btn-primary'  %></p>
-    <p><%= link_to 'Sign up', new_user_registration_path, class:'btn btn-light' %></p>
-
-  </div>
+<section id="hero">
+<div class="hero-content">
+<h1>Save Effortlessly</h1>
+<p>Our Roundup feature helps you save while you spend.</p><br>
+<p>Every purchase you make gets rounded up to the nearest dollar, and the difference is saved automatically.</p>
+<a href="#" class="cta">Start Saving</a>
+<p><%= link_to 'Login', new_user_session_path, class:'btn btn-primary'  %></p>
+<p><%= link_to 'Sign up', new_user_registration_path, class:'btn btn-light' %></p>
 </div>
+<%= video_tag "people_bg.mp4", autoplay: true, muted: true, loop: true, class: "hero-bg" %>
+</section>
