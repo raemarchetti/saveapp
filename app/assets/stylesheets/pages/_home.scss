@@ -79,7 +79,7 @@ body {
   height: 100vh;
 }
 
-.container {
+.container-page {
   position: relative;
   overflow: hidden;
   width: 100vw;
@@ -148,20 +148,20 @@ button:focus {
   outline: none;
 }
 
-.container .controls button {
+.container-page .controls button {
   position: absolute;
   left: 35%;
   top: 50%;
   z-index: 100;
 }
 
-.container .controls .down-button {
+.container-page .controls .down-button {
   transform: translateX(-100%);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.container .controls .up-button {
+.container-page .controls .up-button {
   transform: translateY(-100%);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
