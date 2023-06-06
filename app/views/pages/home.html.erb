@@ -1,6 +1,7 @@
-<%# <%# <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> %>
-<html>
+<%# <h1>Welcome to SaveApp</h1>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<%# ----HOME---- %>
+<%# <html>
 <body>
 <section id="hero">
 <div class="hero-content">
@@ -8,8 +9,40 @@
 <p>Our Roundup feature helps you save while you spend.</p><br>
 <p>Every purchase you make gets rounded up to the nearest dollar, and the difference is saved automatically.</p>
 <a href="#" class="cta">Start Saving</a>
-</div> 
+</div>
 <%= video_tag "people_bg.mp4", autoplay: true, muted: true, loop: true, class: "hero-bg" %>
-</section>
-</body>
-</html>
+<%# </section> %>
+<%# </body> %>
+<%# </html> %>
+
+
+<div class="container">
+  <div class="sidebar">
+    <div style="background-image: linear-gradient(235deg, #52e5e7 10%, #130cb7 100%)">
+      <h1>SaveApp</h1>
+      <p>effortless. simple. easy.</p>
+    </div>
+    <div style="background-image: linear-gradient(135deg, #3b2667 10%, #bc78ec 100%)">
+      <h1>Set Your Goal</h1>
+      <p>effortless. simple. easy.</p>
+    </div>
+    <div style="background: linear-gradient(221.87deg, #c247b2 1%, #00a3dd 100%)">
+      <h1>Round-Up Purchases</h1>
+      <p>effortless. simple. easy.</p>
+    </div>
+    <div style="background-image: linear-gradient(235deg, #97abff 10%, #5f5987 100%)">
+      <h1>Track Your Progress</h1>
+      <p>effortless. simple. easy.</p>
+    </div>
+  </div>
+  <div class="main-slide">
+    <div style="background-image: url(<%= image_path('girls_colorful.jpeg') %>)"></div>
+    <div style="background-image: url(<%= image_path('girl_sun_happy.jpeg') %>)"></div>
+    <div style="background-image: url(<%= image_path('friends_traveling.jpeg') %>)"></div>
+    <div style="background-image: url(<%= image_path('friends_mobile.jpeg') %>)"></div>
+  </div>
+  <div class="controls">
+    <button class="down-button"><i class="fas fa-arrow-down"></i></button>
+    <button class="up-button"><i class="fas fa-arrow-up"></i></button>
+  </div>
+</div>
