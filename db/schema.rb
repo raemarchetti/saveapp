@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_03_143510) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_03_195903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,13 +36,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_143510) do
   end
 
   create_table "operations", force: :cascade do |t|
-    t.decimal "transaction_amount"
-    t.date "transaction_date"
-    t.string "transaction_origin"
+    t.decimal "operation_amount"
+    t.date "operation_date"
+    t.string "operation_origin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "credit_card_id"
+    t.decimal "operation_ceil"
+    t.decimal "roundup_amount"
+    t.bigint "goal_id"
     t.index ["credit_card_id"], name: "index_operations_on_credit_card_id"
+    t.index ["goal_id"], name: "index_operations_on_goal_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +67,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_143510) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "goals", "users"
   add_foreign_key "operations", "credit_cards"
+  add_foreign_key "operations", "goals"
 end
