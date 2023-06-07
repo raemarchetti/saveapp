@@ -1,27 +1,8 @@
-<body>
-  <div class="container-card">
-    <div class="title">
-      <button>
-        <%= image_tag('left-arrow.svg', alt: 'left-arrow') %>
-      </button>
-      <p>Card Center</p>
-      <button>
-        <%= image_tag('menu-dots.svg', alt: 'three dots') %>
-      </button>
-    </div>
-
-    <div class="btn-card">
-      <button>New Card
-        <%# <%= image_tag('plus.svg', alt: 'plus') %>
-        <%= link_to image_tag('plus.svg', alt: 'plus'), new_credit_card_path %>
-      </button>
-    </div>
-
-    
+<%= render 'card_center' %>
 
 <div class="container">
-<%= render 'form' %>
+  <%= render 'form' %>
 </div>
- <div class="text-center mt-4">
-      <%= link_to 'Back', credit_cards_path, class: 'btn btn-primary' %>
-</div>
+ <%# <div class="text-center mt-4">
+  <%= link_to 'Back', credit_cards_path, class: 'btn btn-primary' %>
+<%# </div> %> 

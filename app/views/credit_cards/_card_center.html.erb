@@ -2,37 +2,16 @@
   <div class="container-card">
     <div class="title">
       <button>
-        <%= image_tag('left-arrow.svg', alt: 'left-arrow') %>
+        <%= link_to image_tag('left-arrow.svg', alt: 'left-arrow'), credit_cards_path %>
       </button>
       <p>Card Center</p>
       <button>
-        <%= image_tag('menu-dots.svg', alt: 'three dots') %>
+        <%= link_to image_tag('menu-dots.svg', alt: 'three dots'), profile_path %>
       </button>
     </div>
 
     <div class="btn-card">
       <button>New Card
-        <%# <%= image_tag('plus.svg', alt: 'plus') %>
-        <%= link_to image_tag('plus.svg', alt: 'plus'), new_credit_card_path %>
-      </button>
-    </div>
-
-
-<body>
-  <div class="container-card">
-    <div class="title">
-      <button>
-        <%= image_tag('left-arrow.svg', alt: 'left-arrow') %>
-      </button>
-      <p>Card Center</p>
-      <button>
-        <%= image_tag('menu-dots.svg', alt: 'three dots') %>
-      </button>
-    </div>
-
-    <div class="btn-card">
-      <button>New Card
-        <%# <%= image_tag('plus.svg', alt: 'plus') %>
         <%= link_to image_tag('plus.svg', alt: 'plus'), new_credit_card_path %>
       </button>
     </div>
