@@ -1,26 +1,10 @@
-<%# <h1>Welcome to SaveApp</h1>
-<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-<%# ----HOME---- %>
-<%# <html>
-<body>
-<section id="hero">
-<div class="hero-content">
-<h1>Save Effortlessly</h1>
-<p>Our Roundup feature helps you save while you spend.</p><br>
-<p>Every purchase you make gets rounded up to the nearest dollar, and the difference is saved automatically.</p>
-<a href="#" class="cta">Start Saving</a>
-</div>
-<%= video_tag "people_bg.mp4", autoplay: true, muted: true, loop: true, class: "hero-bg" %>
-<%# </section> %>
-<%# </body> %>
-<%# </html> %>
-
-
 <div class="container-page">
   <div class="sidebar">
     <div style="background-image: linear-gradient(235deg, #52e5e7 10%, #130cb7 100%)">
       <h1>SaveApp</h1>
       <p>effortless. simple. easy.</p>
+      <%= link_to "Start now", welcome_path, class: "btn button-home" %>
+
     </div>
     <div style="background-image: linear-gradient(135deg, #3b2667 10%, #bc78ec 100%)">
       <h1>Set Your Goal</h1>
