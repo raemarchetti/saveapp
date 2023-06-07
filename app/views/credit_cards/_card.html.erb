@@ -1,0 +1,26 @@
+<div class="card__credit">
+  <div class="card__info">
+    <div class="card__logo">MasterCard</div>
+      <div class="card__chip">
+        <%= image_tag 'card-chip.svg', alt: 'chip card' %>
+        <div class="card__chip-texture"></div>
+      </div>
+      <div class="card__type">Credit</div>
+      <div class="card__number">
+        <%= @credit_card.card_number %>
+      </div>
+      <div class="card__valid-thru" aria-label="Valid thru">Valid<br>thru</div>
+      <div class="card__exp-date">
+        <time datetime="2038-01">
+          <%= @credit_card.expiration_date %>
+        </time>
+      </div>
+      <div class="card__name" aria-label="Dee Stroyer">
+        <%= @credit_card.card_holder_name %>
+        </div>
+      <div class="card__vendor" role="img" aria-labelledby="card-vendor">
+      <span id="card-vendor" class="card__vendor-sr">Mastercard</span>
+    </div>
+      <div class="card__texture"></div>
+  </div>
+</div>
