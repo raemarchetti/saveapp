@@ -17,33 +17,11 @@
       </button>
     </div>
 
-    <%# <div class="details">
-      <p>Card Details</p>
-    </div>
-    <div class="list-card">
-      <div>
-        <p>Card Number</p>
-      </div>
-      <div>
-        <p>Card Holder Name</p>
-    </div>
-    <div>
-        <p>Expiration Date</p>
-    </div>
-    <div>
-      <%= image_tag('lock.svg', alt: 'shield lock') %>
-      <%# <p>CVV</p>
-    </div>
-    <div> %>
-      <%# <%= image_tag('credit-card.svg', alt: 'credit card') %>
-      <%# <p>Save Card</p> %>
-    <%# </div> %>
-  <%# </div> %>
-<%# </div> %>
-<%# </body> %> 
+    
 
 <div class="container">
 <%= render 'form' %>
-
-<%= link_to 'Back', credit_cards_path %>
+</div>
+ <div class="text-center mt-4">
+      <%= link_to 'Back', credit_cards_path, class: 'btn btn-primary' %>
 </div>

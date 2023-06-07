@@ -1,12 +1,47 @@
-<div class="container">
-<h2 class="form-heading">Card Details</h2>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Card Details</h2>
 
-<%= simple_form_for(@credit_card) do |form| %>
-  <%= form.input :card_number %>
-  <%= form.input :card_holder_name %>
-  <%= form.input :expiration_date %>
-  <%= form.input :cvv %>
+  <%= simple_form_for(@credit_card, html: {class: 'card border-0 p-4 mx-auto', style: 'max-width: 500px;'}) do |form| %>
 
-  <%= form.button :submit %>
-<% end %>
+    <div class="row text-center py-3">
+      <div class="col-12 mx-auto">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-credit-card" style="color: #0066ff;"></i></span>
+          <%= form.input :card_number, label: false, input_html: {class: 'form-control', placeholder: 'Card Number'}, wrapper: false %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center py-3">
+      <div class="col-12 mx-auto">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-user" style="color: #0066ff;"></i></span>
+          <%= form.input :card_holder_name, label: false, input_html: {class: 'form-control', placeholder: 'Card Holder Name'}, wrapper: false %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center py-3">
+      <div class="col-12 mx-auto">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt" style="color: #0066ff;"></i></span>
+          <%= form.input :expiration_date, label: false, input_html: {class: 'form-control', placeholder: 'Expiration Date'}, wrapper: false %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center py-3">
+      <div class="col-12 mx-auto">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock" style="color: #0066ff;"></i></span>
+          <%= form.input :cvv, label: false, input_html: {class: 'form-control', placeholder: 'CVV'}, wrapper: false %>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <%= form.button :submit, 'Submit', class: 'btn btn-primary' %>
+    </div>
+
+  <% end %>
 </div>
