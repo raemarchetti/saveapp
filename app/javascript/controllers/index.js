@@ -6,6 +6,10 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ObjectivesController from "./objectives_controller"
+application.register("objectives", ObjectivesController)
+=======
 // ----HOME----
 const upBtn = document.querySelector(".up-button");
 const downBtn = document.querySelector(".down-button");

@@ -1,5 +1,32 @@
-<div class="container">
-<h1>Create a New Goal</h1>
+<div class="container" data-controller="objectives">
 
-<%= render "form", goal: @goal %>
+  <div class="container-goal">
+    <div class="title">
+      <button>
+        <%= link_to image_tag("left-arrow.svg", alt: "left-arrow", size: ""), welcome_path %>
+      </button>
+      <button>
+        <%= link_to image_tag("question.svg", alt: "question mark"), welcome_path %>
+      </button>
+  </div>
+  <div class="question">
+      <p>What's your goal?</p>
+    </div>
+    <div class="objectives">
+      <button data-action="click->objectives#home" >Buy a Home
+        <%= image_tag "house.svg", alt: "house" %>
+      </button>
+      <button data-action="click->objectives#travel">Travel
+        <%= image_tag "world.svg", alt: "world map" %>
+      </button>
+      <button data-action="click->objectives#emergency">Emergency
+        <%= image_tag "cash.svg", alt: "cash" %>
+      </button>
+    </div>
+
+  <%= render 'form' %>
+  
+  <div class="container text-center">
+    By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions
+  </div>
 </div>

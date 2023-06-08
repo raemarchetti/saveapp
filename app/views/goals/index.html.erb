@@ -1,41 +1,26 @@
-<body>
-  <div class="container-goal">
-    <div class="title">
-      <button>
-        <%= link_to image_tag('left-arrow.svg', alt: 'left-arrow'), welcome_path %>
-      </button>
-      <button>
-        <%= link_to image_tag('question.svg', alt: 'question mark'), welcome_path %>
-      </button>
+
+<div class="container-goal">
+   <div class="title">
+     <button>
+       <%= image_tag "left-arrow.svg", alt: "left-arrow", size: "" %>
+     </button>
+     <button>
+       <%= image_tag "question.svg", alt: "question mark" %>
+     </button>
   </div>
-  <div class="question">
-    <p>What's your goal?</p>
-  </div>
-  <div class="objectives">
-    <button>Home
-      <%= image_tag "house.svg", alt: "house" %>
-    </button>
-    <button>Travel
-      <%= image_tag "world.svg", alt: "world map" %>
-    </button>
-    <button>Emergency
-      <%= image_tag "cash.svg", alt: "cash" %>
-    </button>
-  </div>
-    <form class="goal-form">
-      <div class="mb-3">
-        <label for="formCustomGoal" class="form-label">Custom Goal</label>
-          <input type="text" class="form-control" id="nameGoal" placeholder="Name your goal">
-      </div>
-    <div class="mb-3">
-      <label for="formvalueGoal" class="form-label">What is your goal amount?</label>
-        <input type="text" class="form-control" id="valueGoal" placeholder="$$$">
-    </div>
-  </form>
-    <footer>
-      <p>By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions</p>
-      <button type="submit">Make your dreams come true!
-      </button>
-    </footer>
-  </div>
-</body>
+
+  <% if @goals %>
+    <h3>Find out your goals here.</h3>
+    <hr>
+  <% @goals.each do |goal| %>
+      <p><%= goal.goal_name %></p>
+      <p>$<%= goal.goal_amount.round(2) %></p>
+      <p>$<%= goal.goal_amount.round(2) %></p>
+    <% end %>
+  <% else %>
+    <h3>Let's create your first goal!</h3>
+<% end %>
+
+<%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary' %>
+
+</div>
