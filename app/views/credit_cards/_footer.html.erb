@@ -1,26 +1,29 @@
 <footer>
-    <button class="dash-btn">
-        <div class="sign">
-          <%= link_to image_tag('house.svg', alt: 'house'), welcome_path %>
-        </div>
-        <div class="text">Home</div>
-    </button>
-    <button class="dash-btn">
-        <div class="sign">
-          <%= link_to image_tag('world.svg', alt: 'world'), goals_path %>
-        </div>
-        <div class="text">Goal</div>
-    </button>
-    <button class="dash-btn">
-        <div class="sign">
-          <%= link_to image_tag('cash.svg', alt: 'cash'), dashboard_path %>
-        </div>
-        <div class="text">Wallet</div>
-    </button>
-    <button class="dash-btn">
-        <div class="sign">
-          <%= link_to image_tag('profile.svg', alt: 'profile'), profile_path %>
-        </div>
-        <div class="text">Profile</div>
-    </button>
+  <%= link_to welcome_path, class: "btn dash-btn" do %>
+    <div class="sign">
+      <%=  image_tag('house.svg', alt: 'house') %>
+    </div>
+    <div class="text">Home</div>
+  <% end %>
+
+  <%= link_to goals_path, class: "btn dash-btn" do %>
+    <div class="sign">
+      <%=  image_tag('world.svg', alt: 'world') %>
+    </div>
+    <div class="text">Goal</div>
+  <% end %>
+
+  <%= link_to dashboard_path, class: "btn dash-btn" do %>
+    <div class="sign">
+      <%=  image_tag('cash.svg', alt: 'cash') %>
+    </div>
+    <div class="text">Wallet</div>
+      <% end %>
+
+  <%= link_to profile_path, class: "btn dash-btn" do %>
+    <div class="sign">
+      <%=  image_tag('profile.svg', alt: 'profile') %>
+    </div>
+    <div class="text">Profile</div>
+  <% end %>
 </footer>
