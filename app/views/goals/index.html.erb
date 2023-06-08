@@ -2,10 +2,10 @@
   <div class="container-goal">
     <div class="title">
       <button>
-        <%= image_tag "left-arrow.svg", alt: "left-arrow", size: "" %>
+        <%= link_to image_tag('left-arrow.svg', alt: 'left-arrow'), welcome_path %>
       </button>
       <button>
-        <%= image_tag "question.svg", alt: "question mark" %>
+        <%= link_to image_tag('question.svg', alt: 'question mark'), welcome_path %>
       </button>
   </div>
   <div class="question">
@@ -34,7 +34,8 @@
   </form>
     <footer>
       <p>By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions</p>
-      <button type="submit">Make your dreams come true!</button>
+      <button type="submit">Make your dreams come true!
+      </button>
     </footer>
   </div>
 </body>
