@@ -1,4 +1,9 @@
-.card,
+.card__credit{
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
 .card__chip {
   overflow: hidden;
   position: relative;
@@ -50,6 +55,7 @@
   flex-wrap: wrap;
   padding: 0.75rem;
   inset: 0;
+  width: 100%;
 }
 
 .card__logo,
@@ -67,8 +73,8 @@
   border-radius: 0.2rem;
   box-shadow: 0 0 0 0.05rem hsla(0, 0%, 0%, 0.5) inset;
   width: 1.25rem;
-  height: 1.25rem;
-  transform: translate3d(0, 0, 0);
+  height: 1.15rem;
+  transform: translate3d(0, 0, 0)
 }
 
 .card__chip-lines {
