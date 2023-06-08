@@ -8,7 +8,6 @@ body{
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  // font-family: 'Nunito', sans-serif;
 }
 
 .title{
@@ -44,24 +43,6 @@ body{
   align-items: center;
 }
 
-/* .btn-card button{
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-width: 200px;
-  height: 200px;
-  background-color: #f2f2f2;
-  margin-right: 10px;
-  margin-left: 1.5rem;
-  padding: 2rem;
-  font-size: x-large;
-  gap: 1rem;
-  color: #ffffff;
-  font-weight: bolder;
-} */
-
 .btn-card button{
   display: flex;
   justify-content: center;
@@ -86,39 +67,4 @@ body{
   top: 2px;
 }
 
-.details {
-  margin-top: 2rem;
-  text-align: center;
-}
 
-.details p{
-  font-size: 1.2rem;
-}
-
-.list-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem 2rem;
-  gap: 1rem;
-  width: 375px;
-  height: 372px;
-  left: 1px;
-  top: 436px;
-}
-
-.list-card div{
-  color: #717E95;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  padding-bottom: 1rem;
-  width: 100%;
-  border-bottom: 1px solid #32a1ce;
-}
-
-.list-card div p{
-  padding: 0;
-  margin: 0;
-}
