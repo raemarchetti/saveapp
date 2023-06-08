@@ -5,8 +5,12 @@
     <%= video_tag "saveapp_motion.mp4", autoplay: true, muted: true, loop: true, class: "", size: "400x260" %>
       <p>Save effortlessly</p>
   </div>
+  <%# to be reviewed - only for demo %>
     <footer>
-      <button>Get started</button>
+      <button>
+       <%= link_to 'Get Started', goals_path %>
+      </button>
     </footer>
+
   </div>
   </body>
