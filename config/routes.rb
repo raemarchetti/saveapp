@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :credit_cards
   # , except: :index
-  resources :transactions
+
   resources :credit_cards, except: :index do
     resources :operations, only: [:index, :new, :create]
   end
