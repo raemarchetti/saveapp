@@ -1,25 +1,25 @@
 <footer>
     <button class="dash-btn">
         <div class="sign">
-            <%= image_tag 'house.svg', alt: 'house'%>
+          <%= link_to image_tag('house.svg', alt: 'house'), welcome_path %>
         </div>
         <div class="text">Home</div>
     </button>
     <button class="dash-btn">
         <div class="sign">
-            <%= image_tag 'world.svg', alt: 'world'%>
+          <%= link_to image_tag('world.svg', alt: 'world'), goals_path %>
         </div>
         <div class="text">Goal</div>
     </button>
     <button class="dash-btn">
         <div class="sign">
-            <%= image_tag 'cash.svg', alt: 'cash'%>
+          <%= link_to image_tag('cash.svg', alt: 'cash'), dashboard_path %>
         </div>
         <div class="text">Wallet</div>
     </button>
     <button class="dash-btn">
         <div class="sign">
-            <%= image_tag 'profile.svg', alt: 'profile'%>
+          <%= link_to image_tag('profile.svg', alt: 'profile'), profile_path %>
         </div>
         <div class="text">Profile</div>
     </button>
