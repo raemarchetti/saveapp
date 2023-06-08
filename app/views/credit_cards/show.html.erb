@@ -1,17 +1,7 @@
-<div class="container">
-<h1 >Credit Card Details</h1>
+<%= render 'menu' %>
 
-<%= @credit_card.card_number %>
-<%= @credit_card.expiration_date %>
-<%= @credit_card.card_holder_name %>
-<%= @credit_card.cvv %>
+<%= render 'card' %>
 
-<p>
-  <%= link_to 'Operations', credit_card_operations_path(@credit_card) %>
-  <%= link_to 'Edit', edit_credit_card_path(@credit_card), class: "btn btn-warning"%> |
-  <%= link_to 'Back', credit_cards_path %>
-</p>
-</div>
-<div class="form-links">
-<%= render 'card_center' %>
-</div>
+<%= render 'card_info' %>
+
+<%= render 'footer' %>
