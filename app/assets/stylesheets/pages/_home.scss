@@ -1,69 +1,146 @@
-// // Specific CSS for your home-page
-body, html {
-  height: 100%;
+* {
+  box-sizing: border-box;
   margin: 0;
-  // color: white;
-  }
+  padding: 0;
+  // font-size: 16px;
+}
 
-  #hero {
+body {
+  height: 100vh;
+}
+
+.container-page {
   position: relative;
-  width: 100%;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar {
   height: 100%;
+  width: 35%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.sidebar > div {
+  height: 100%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: #fff;
+}
+
+.sidebar h1 {
+  font-weight: 900;
+  font-size: 34px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+  padding: 20px;
   text-align: center;
-  overflow: hidden;
-  }
+}
 
-  .hero-content {
-  position: relative;
-  z-index: 2;
-  }
+.main-slide {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+  transition: transform 0.5s ease-in-out;
+}
 
-  // this is not active
-  // .hero-bg {
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-  // height: 100%;
-  // object-fit: cover;
-  // z-index: 1;
-  // }
+.main-slide > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+}
 
-  .hero-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
+button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+}
 
+button:hover {
+  color: #222;
+}
 
-  h1 {
-  font-size: 2.5em;
-  margin-bottom: 1em;
-  }
+button:focus {
+  outline: none;
+}
 
-  p {
-  font-size: 1.2em;
-  max-width: 600px;
-  margin: 0 auto 2em;
-  }
+.container-page .controls button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 100;
+}
 
-  .cta {
-  display: inline-block;
-  padding: 15px 30px;
-  font-size: 1.2em;
+.container-page .controls .down-button {
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.container-page .controls .up-button {
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+// Button Homepage
+.button-home {
+  background-color: blueviolet;
+  border: none;
   color: white;
-  background-color: $blue;
-  border-radius: 30px;
+  padding: 10px 20px;
+  text-align: center;
   text-decoration: none;
-  transition: background-color 0.3s;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.button-home:after {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.button-home:hover:after {
+  animation: ripple_401 1s ease-out;
+}
+
+@keyframes ripple_401 {
+  0% {
+    width: 5px;
+    height: 5px;
+    opacity: 1;
   }
 
-  .cta:hover {
-  background-color: $light-blue;
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
   }
+}
