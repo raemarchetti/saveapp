@@ -9,8 +9,7 @@ application.register("hello", HelloController)
 
 import ObjectivesController from "./objectives_controller"
 application.register("objectives", ObjectivesController)
-=======
-// ----HOME----
+
 const upBtn = document.querySelector(".up-button");
 const downBtn = document.querySelector(".down-button");
 const sidebar = document.querySelector(".sidebar");
