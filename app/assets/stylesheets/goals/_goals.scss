@@ -114,7 +114,6 @@ a {
   text-decoration: none;
 }
 
-
 .container-goal-index {
   width: 90%;
   margin: auto;
@@ -147,6 +146,12 @@ a {
 .container-goal-index .card .card-text {
   font-size: 16px;
   color: #666;
+}
+
+.text-center {
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
 }
 
 @media (min-width: 576px) {
