@@ -14,9 +14,12 @@
 
   <body>
     <%= render "shared/navbar" unless @disable_nav %>
-    <div class="main-container ">
+    <div class="main-container justify-content-center">
+
+
       <%= render "shared/flashes" %>
       <%= yield %>
+
     </div>
   </body>
 </html>

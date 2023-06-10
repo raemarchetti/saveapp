@@ -1,10 +1,11 @@
 <div class="container">
-
-  <%= render 'menu' %>
+  <%= render "shared/menu" %>
+  <h5 class="display-6 py-5"> Card Center </h5>
 
   <%= render 'card' %>
-
-  <%= render 'card_info' %>
+  <div class="d-flex justify-content-center">
+    <%= render 'card_info' %>
+  </div>
 
   <%= render 'shared/tapbar' %>
 </div>
