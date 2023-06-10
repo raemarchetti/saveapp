@@ -14,5 +14,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     stored_location_for(resource) || welcome_path
   end
-  
+
+  def disable_nav
+    @disable_nav = true
+  end
 end
