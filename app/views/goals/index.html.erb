@@ -1,16 +1,10 @@
 <div class="container-goal-index text-center">
   <div class="title-index d-flex justify-content-between mb-3 align-items-center">
-
-  <%= link_to welcome_path do %>
-  <button>
-    <%= image_tag("left-arrow.svg", alt: "left-arrow", size: "") %>
-  </button>
-  <% end %>
-
+    <%= link_to :back do %>
+      <%= image_tag("left-arrow.svg", alt: "left-arrow") %>
+    <% end %>
   <%= link_to dashboard_path do %>
-  <button>
     <%= image_tag "question.svg", alt: "question mark" %>
-  </button>
   <% end %>
 
   </div>

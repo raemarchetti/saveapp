@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :credit_cards
   has_many :goals
   has_many :operations, through: :credit_cards
-
+  has_one_attached :photo
 end

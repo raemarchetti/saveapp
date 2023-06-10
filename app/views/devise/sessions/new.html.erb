@@ -1,6 +1,9 @@
 <%# log in page %>
 <div class="form-container">
-<h2 class="form-heading">Welcome back!</h2>
+ <div class="d-flex justify-content-center align-items-center">
+    <%= video_tag "saveapp_motion.mp4", autoplay: true, muted: true, loop: true, class: "", size: "300x160" %>
+  </div>
+<h2 class="form-heading"></h2>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
@@ -14,7 +17,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "btn btn-primary" %>
+    <%= f.button :submit, "Log in", class: "btn btn-primary"%>
   </div>
 <% end %>
   <div class="form-links">
