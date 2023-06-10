@@ -113,3 +113,49 @@ a {
   color: white;
   text-decoration: none;
 }
+
+.container-goal-index {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.container-goal-index .title-index {
+  padding: 10px 0;
+}
+
+.container-goal-index h3 {
+  padding: 10px 0;
+}
+
+.container-goal-index .card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.container-goal-index .card .card-body {
+  padding: 20px;
+}
+
+.container-goal-index .card .card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.container-goal-index .card .card-text {
+  font-size: 16px;
+  color: #666;
+}
+
+.text-center {
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+@media (min-width: 576px) {
+  .container-goal {
+      width: 80%; /* Adjust width for larger screens */
+  }
+}
