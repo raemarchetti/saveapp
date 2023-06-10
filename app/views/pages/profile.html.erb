@@ -16,11 +16,7 @@
 
   <div class="mt-3 p-3 d-flex justify-content-center position-relative">
     <div class="avatar-wrapper">
-      <%# <% if current_user.photo.attached? %>
-        <%# <%= cl_image_tag current_user.photo.key %>
-      <%# <% else %>
-        <%# <%= image_tag "avatarX.jpeg", class: "avatar"%>
-      <%# <% end %>
+      <%= image_tag "avatar.jpeg", class: "profile_avatar"%>
     </div>
     <h3 class="h3 fw-normal align-text-center mt-3"><%= @user.name %></h3>
   </div>
@@ -31,7 +27,7 @@
       <h6 class="mb-0 text-start text-secondary text-opacity-50">Contact Information</h6>
     </div>
     <hr>
-    <div class="text">
+    <div class="profile_text">
       <div class="d-flex justify-content-between mb-0 w-100">
           <p class="m-0 text-secondary">Email</p>
           <p class="m-0"><%= @user.email %></p>
