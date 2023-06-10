@@ -1,26 +1,41 @@
+<div class="container-goal-index text-center">
+  <div class="title-index d-flex justify-content-between mb-3 align-items-center">
 
-<div class="container-goal">
-   <div class="title">
-     <button>
-       <%= image_tag "left-arrow.svg", alt: "left-arrow", size: "" %>
-     </button>
-     <button>
-       <%= image_tag "question.svg", alt: "question mark" %>
-     </button>
+  <%= link_to welcome_path do %>
+  <button>
+    <%= image_tag("left-arrow.svg", alt: "left-arrow", size: "") %>
+  </button>
+  <% end %>
+
+  <%= link_to dashboard_path do %>
+  <button>
+    <%= image_tag "question.svg", alt: "question mark" %>
+  </button>
+  <% end %>
+
   </div>
 
   <% if @goals %>
-    <h3>Find out your goals here.</h3>
+    <h3 class="mb-3">Goals</h3>
     <hr>
+    <div class="row justify-content-center">
   <% @goals.each do |goal| %>
-      <p><%= goal.goal_name %></p>
-      <p>$<%= goal.goal_amount.round(2) %></p>
-      <p>$<%= goal.goal_amount.round(2) %></p>
-    <% end %>
-  <% else %>
-    <h3>Let's create your first goal!</h3>
+  <div class="col-md-4 col-sm-12">
+    <div class="card mb-4">
+    <%= image_tag('boat_mountains.jpeg', alt:'')%>
+      <div class="card-body">
+      <h5 class="card-title"><%= goal.goal_name %></h5>
+      <p class="card-text">$<%= goal.goal_balance %></p>
+      <p class="card-text">$<%= goal.goal_amount.round(2) %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+<% else %>
+  <h3>Create a goal</h3>
 <% end %>
 
-<%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary' %>
+<%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary mt-3' %>
 
 </div>

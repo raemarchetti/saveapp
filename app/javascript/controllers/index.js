@@ -47,3 +47,5 @@ function changeSlide(direction) {
 
   sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
 }
+
+

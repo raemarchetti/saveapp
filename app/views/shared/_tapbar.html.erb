@@ -1,8 +1,29 @@
-<div class="tapbar">
-  <div class="items-tapbar <%= "active" if current_page?(root_path) %> d-flex flex-column align-items-center">
-  <%= link_to root_path do %>
- <i class="fa-regular fa-house"></i>
+<footer>
+  <%= link_to welcome_path, class: "btn dash-btn" do %>
+  <div class="sign">
+    <%=  image_tag('house.svg', alt: 'house') %>
+  </div>
+  <div class="text">Home</div>
   <% end %>
-  <span class="">Home</span>
-</div>
-</div>
+
+  <%= link_to goals_path, class: "btn dash-btn" do %>
+  <div class="sign">
+    <%=  image_tag('world.svg', alt: 'world') %>
+  </div>
+  <div class="text">Goal</div>
+  <% end %>
+
+  <%= link_to dashboard_path, class: "btn dash-btn" do %>
+  <div class="sign">
+    <%=  image_tag('cash.svg', alt: 'cash') %>
+  </div>
+  <div class="text">Wallet</div>
+    <% end %>
+
+  <%= link_to profile_path, class: "btn dash-btn" do %>
+    <div class="sign">
+      <%=  image_tag('profile.svg', alt: 'profile') %>
+    </div>
+    <div class="text">Profile</div>
+  <% end %>
+</footer>
