@@ -12,11 +12,13 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || goals_path
+    # stored_location_for(resource) || goals_path
+    goals_path
   end
 
   def after_sign_up_path_for(resource)
-    stored_location_for(resource) || welcome_path
+    # stored_location_for(resource) || welcome_path
+    welcome_path
   end
 
 end

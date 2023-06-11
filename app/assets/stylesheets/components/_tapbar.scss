@@ -1,3 +1,7 @@
+.container {
+  width: 100%;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -5,7 +9,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  background-color: whitesmoke;
+  background-color: transparent;
   width: 100vw;
   height: 7vh;
   padding: 0 3rem;
@@ -50,7 +54,7 @@ footer {
   width: 0%;
   opacity: 0;
   color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 600;
   transition-duration: .3s;
 }
