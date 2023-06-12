@@ -1,3 +1,16 @@
+  <div class="container">
+  <div class="title-index d-flex justify-content-between mb-3 align-items-center">
+    <%= link_to :back do %>
+      <%= image_tag("left-arrow.svg", alt: "left-arrow") %>
+    <% end %>
+    <div class="col-10 text1 text-center">
+      <h4 class= "h4 fw-lighter">Profile</h4>
+    </div>
+  <%= link_to profile_path do %>
+    <%= image_tag("question.svg", alt: "question-mark", size:"") %>
+  <% end %>
+  </div>
+
 <div class="form-container">
 <h2 class="form-heading">Edit <%= resource_name.to_s.humanize %></h2>
 
