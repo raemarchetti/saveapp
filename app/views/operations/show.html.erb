@@ -1,9 +1,16 @@
 <div class="container">
-<h1><%= @operation.operation_origin %></h1>
-
-<p>Amount: <%= number_to_currency(@operation.operation_amount, unit: '$', precision: 2) %></p>
-<p>Date: <%= @operation.operation_date %></p>
-
-<%# <%= link_to 'Back', operations_path, class:'btn btn-primary my-3' %>
-
+  <% @credit_cards = CreditCard.all %>
+  <% @goals = Goal.all %>
+  <div class="card-product">
+    <img src="https://img.freepik.com/free-vector/illustration-financial-concept_53876-5913.jpg?w=740&t=st=1686683898~exp=1686684498~hmac=256d7261978c951d66a0ef5b2345dcd26d393df8228b38bf8924c46a39c9c745" />
+    <div class="card-product-infos">
+      <h2>Origin: <%= @operation.operation_origin %></h2>
+      <p>Amount: <%= number_to_currency(@operation.operation_amount, unit: '$', precision: 2) %></p>
+      <p>Date: <%= @operation.operation_date.strftime('%d %b %Y') %></p>
+      <p>Roundup: <strong class="text-success">$ <%= format('%.2f', @operation.next_value[0]) %></strong></p>
+      <p>Credit Card Number: <%= @credit_cards.find(@operation.credit_card_id).card_number.gsub!(/.(?=....)/, '*') %></p>
+      <p>Goal: <%= @goal_name = @goals.find(@operation.goal_id).goal_name.capitalize  %> </p>
+      <p></p>
+    </div>
+  </div>
 </div>

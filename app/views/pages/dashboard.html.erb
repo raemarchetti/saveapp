@@ -4,12 +4,10 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">Details</th>
         <th scope="col">Date</th>
         <th scope="col">Origin</th>
         <th scope="col">RoundUp</th>
-        <th scope="col">Credit Card Number</th>
-        <th scope="col">Goal Name</th>
       </tr>
     </thead>
 
@@ -20,12 +18,12 @@
     <% sum = [] %>
     <% @operation.each do |element| %>
       <tr>
-        <th scope="row"><%= element.id %></th>
+        <th scope="row"><%= link_to "Details", operation_path(element.id), class: "btn btn-outline-primary btn-sm"%></th>
         <td><%= element.operation_date.strftime('%d %b %Y') %></td>
         <td><%= element.operation_origin %></td>
         <td class="text-success">$ <%= format('%.2f', element.next_value[0]) %></td>
-        <td><%= @credit_cards.find(element.credit_card_id).card_number.gsub!(/.(?=....)/, '*') %></td>
-        <td><%= @goal_name = @goals.find(element.goal_id).goal_name.capitalize  %></td>
+        <% @credit_cards.find(element.credit_card_id).card_number.gsub!(/.(?=....)/, '*') %>
+        <% @goal_name = @goals.find(element.goal_id).goal_name.capitalize  %>
         <% @goal_amount = @goals.find(element.goal_id).goal_amount  %>
         <% sum << element.next_value[0] %>
         <% end %>
