@@ -1,7 +1,10 @@
 <%= render 'menu' %>
 
-<%= render 'card' %>
-
-<%= render 'card_info' %>
+<% if @credit_card.user == current_user%>
+  <%= render 'card' %>
+  <%= render 'card_info' %>
+  <% else %>
+  <p class = "justify-content-center">You don't have any credit cards yet.</p>
+<% end %>
 
 <%= render 'shared/tapbar' %>

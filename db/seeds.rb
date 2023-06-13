@@ -8,9 +8,9 @@ User.destroy_all
 
     # # # <<Create a standard user, with pre-set credentials>>
 user = User.create!(
-  email: "test@admin.test",
+  email: "mari@mail.com",
   password: 'password',
-  name: 'Jane Doe',
+  name: 'Mariana Milani',
   address: Faker::Address.unique.full_address,
   phone_number: Faker::PhoneNumber.unique.cell_phone_in_e164
 )
@@ -67,7 +67,7 @@ user = User.create!(
   # # # <<Create goals with pre-set parameters>>
   goal =
      Goal.create!(
-      goal_name: 'travel', user: user, goal_amount: Faker::Number.between(from: 200.0, to: 3000.0), goal_balance: 0
+      goal_name: 'Travel', user: user, goal_amount: Faker::Number.between(from: 200.0, to: 3000.0), goal_balance: 0
     )
 
   # # # <<Create transactions with pre-set parameters>>
@@ -92,7 +92,7 @@ user = User.create!(
   )
 
   operation = Operation.create!(
-    operation_amount: 15.10,
+    operation_amount: 62.10,
     operation_date: Date.today - 1,
     operation_origin: 'Teddy`s Bar',
     operation_ceil: 0,
@@ -105,6 +105,66 @@ user = User.create!(
     operation_amount: 188.18,
     operation_date: Date.today - 2,
     operation_origin: 'Leroy Merlin',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card_id: credit_card.id,
+    goal: goal
+  )
+
+  operation = Operation.create!(
+    operation_amount: 21.75,
+    operation_date: Date.today - 2,
+    operation_origin: 'Mac Donald`s',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card_id: credit_card.id,
+    goal: goal
+  )
+
+  operation = Operation.create!(
+    operation_amount: 326.25,
+    operation_date: Date.today - 2,
+    operation_origin: 'Pão de Açucar',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card_id: credit_card.id,
+    goal: goal
+  )
+
+  operation = Operation.create!(
+    operation_amount: 35.00,
+    operation_date: Date.today - 3,
+    operation_origin: 'Burguer King',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card_id: credit_card.id,
+    goal: goal
+  )
+
+  operation = Operation.create!(
+    operation_amount: 199.90,
+    operation_date: Date.today - 3,
+    operation_origin: 'Droga Raia',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card_id: credit_card.id,
+    goal: goal
+  )
+
+  operation = Operation.create!(
+    operation_amount: 12.40,
+    operation_date: Date.today - 3,
+    operation_origin: 'Shopee',
+    operation_ceil: 0,
+    roundup_amount: 0,
+    credit_card_id: credit_card.id,
+    goal: goal
+  )
+
+  operation = Operation.create!(
+    operation_amount: 91.65,
+    operation_date: Date.today - 3,
+    operation_origin: 'Shein',
     operation_ceil: 0,
     roundup_amount: 0,
     credit_card_id: credit_card.id,
