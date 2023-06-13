@@ -2,24 +2,26 @@
   <div class="details">
     <h5 class="display-7"> Card Details </h5>
 
-    <div class="list-card">
-
-      <div>
-        <p>Card Number</p>
-        <%= @credit_card.card_number %>
-      </div>
-
-      <div>
-      <%= image_tag 'credit-card.svg', alt: 'credit card' %>
-        <p>Limit: R$ 5.000,00</p>
-      </div>
-
-      <button class='change'>
-      <%= image_tag 'credit-card2.svg', alt: 'credit card' %>
-        <%# <p>Change Card</p> %>
-        <%# <%= link_to 'Delete', destroy_credit_card_path(credit_card), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%# <%= button_to "Delete", credit_card_path(@credit_card), method: :delete, class: "btn btn-primary" %>
-        <%= link_to "Change Card", new_credit_card_path(@credit_card), class: 'text-bn' %>
-      </button>
+  <div class="list-card">
+    <div>
+      <p class="fw-lighter">Card Number</p>
+      <%= @credit_card.card_number %>
     </div>
+  <%# <div>
+    <p>Saving Balance</p>
+    <%= @goal.goal_balance %>
+  <%# </div> %>
+  <div>
+  <%= image_tag 'credit-card.svg', alt: 'credit card' %>
+    <p>Limit: R$ 5.000,00</p>
   </div>
+  <%# <div> %>
+  <button class='change'>
+  <%= image_tag 'credit-card2.svg', alt: 'credit card' %>
+    <%# <p>Change Card</p> %>
+    <%# <%= link_to 'Delete', destroy_credit_card_path(credit_card), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%# <%= button_to "Delete", credit_card_path(@credit_card), method: :delete, class: "btn btn-primary" %>
+    <%= link_to "Change Card", new_credit_card_path(@credit_card), class: 'text-bn' %>
+  </button>
+  </div>
+</div>

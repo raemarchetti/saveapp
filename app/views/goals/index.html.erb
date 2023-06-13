@@ -3,14 +3,16 @@
     <%= link_to :back do %>
       <%= image_tag("left-arrow.svg", alt: "left-arrow") %>
     <% end %>
+    <div class="col-10 text1 text-center">
+      <h4 class= "h4 fw-lighter">Goals</h4>
+    </div>
   <%= link_to dashboard_path do %>
-    <%= image_tag "question.svg", alt: "question mark" %>
+    <%= image_tag("analytics.gif", alt: "analytics", size:"36x36") %>
   <% end %>
-
   </div>
 
   <% if @goals %>
-    <h3 class="mb-3">Goals</h3>
+    <%# <h3 class="mb-3"></h3> %>
     <hr>
     <div class="row justify-content-center">
   <% @goals.each do |goal| %>
@@ -30,6 +32,5 @@
   <h3>Create a goal</h3>
 <% end %>
 
-<%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary mt-3' %>
-
+<%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary text-center mt-4 d-grid gap-2' %>
 </div>
