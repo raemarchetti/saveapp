@@ -6,9 +6,9 @@
     <div class="col-10 text1 text-center">
       <h4 class= "h4 fw-lighter">Goals</h4>
     </div>
-  <%= link_to dashboard_path do %>
-    <%= image_tag("analytics.gif", alt: "analytics", size:"36x36") %>
-  <% end %>
+    <%= link_to dashboard_path do %>
+      <%= image_tag("analytics.gif", alt: "analytics", size:"36x36") %>
+    <% end %>
   </div>
 
   <% if @goals %>
@@ -16,21 +16,21 @@
     <hr>
     <div class="row justify-content-center">
   <% @goals.each do |goal| %>
-  <div class="col-md-4 col-sm-12">
-    <div class="card mb-4">
-    <%= image_tag('sea_view_sunny.jpeg', alt:'')%>
-      <div class="card-body">
-      <h5 class="card-title"><%= goal.goal_name %></h5>
-      <p class="card-text">$<%= goal.goal_balance %></p>
-      <p class="card-text">$<%= goal.goal_amount.round(2) %></p>
+    <div class="col-md-4 col-sm-12">
+      <div class="card mb-4">
+      <%= image_tag('sea_view_sunny.jpeg', alt:'')%>
+        <div class="card-body">
+        <h5 class="card-title"><%= goal.goal_name %></h5>
+        <p class="card-text">$<%= goal.goal_balance %></p>
+        <p class="card-text">$<%= goal.goal_amount.round(2) %></p>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
 <% else %>
   <h3>Create a goal</h3>
 <% end %>
 
 <%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary text-center mt-4 d-grid gap-2' %>
-</div>
+

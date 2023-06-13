@@ -14,39 +14,31 @@
 
   <body>
     <%= render "shared/navbar" unless @disable_nav %>
-    <div class="main-container justify-content-center">
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <%# <%= render "shared/footer" %>
-    <%# <%= render 'shared/tapbar'%>
-
-    <%
-      paths = [
-        root_path,
-        welcome_path,
-        new_user_session_path,
-        user_session_path,
-        destroy_user_session_path,
-        new_user_password_path,
-        edit_user_password_path,
-        user_password_path,
-        cancel_user_registration_path,
-        new_user_registration_path,
-        edit_user_registration_path,
-        user_registration_path
-      ]
-      unless paths.any? { |path| current_page?(path) }
-%>
-
-  <%= render 'shared/tapbar' %>
-  <% end %>
-
-
 
       <%= render "shared/flashes" %>
       <%= yield %>
 
-    </div>
+      <%
+        paths = [
+          root_path,
+          welcome_path,
+          new_user_session_path,
+          user_session_path,
+          destroy_user_session_path,
+          new_user_password_path,
+          edit_user_password_path,
+          user_password_path,
+          cancel_user_registration_path,
+          new_user_registration_path,
+          edit_user_registration_path,
+          user_registration_path
+        ]
+        unless paths.any? { |path| current_page?(path) }
+    %>
+
+      <%= render 'shared/tapbar' %>
+      <% end %>
+
+ 
   </body>
 </html>
