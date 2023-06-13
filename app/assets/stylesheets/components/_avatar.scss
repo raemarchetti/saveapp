@@ -1,6 +1,7 @@
 .avatar {
   width: 45px;
   height: 45px;
+  border-radius: 50%;
 }
 .avatar-large {
   width: 56px;
@@ -30,4 +31,9 @@
   align-items: center;
   position: absolute;
   left: 1rem;
+}
+
+.profile_avatar {
+  width: 75px;
+  height: 75px;
 }
