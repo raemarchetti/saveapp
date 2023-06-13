@@ -67,7 +67,7 @@ user = User.create!(
   # # # <<Create goals with pre-set parameters>>
   goal =
      Goal.create!(
-      goal_name: 'Travel', user: user, goal_amount: Faker::Number.between(from: 200.0, to: 3000.0), goal_balance: 0
+      goal_name: 'Travel', user: user, goal_amount: 1500, goal_balance: 0
     )
 
   # # # <<Create transactions with pre-set parameters>>
