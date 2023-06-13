@@ -1,5 +1,19 @@
 <div class="container-goal">
   <%= render "shared/menu" %>
+<div class="container text-center">
+  <div class="title-index d-flex justify-content-between mb-3 align-items-center">
+    <%= link_to :back do %>
+      <%= image_tag("left-arrow.svg", alt: "left-arrow") %>
+    <% end %>
+    <div class="col-10 text1 text-center">
+      <h4 class= "h4 fw-lighter">Dashboard</h4>
+    </div>
+  <%= link_to dashboard_path do %>
+    <%= image_tag("question.svg", alt: "question mark") %>
+  <% end %>
+  </div>
+</div>
+
 <div class="container">
   <table class="table table-hover">
     <thead>
@@ -44,3 +58,5 @@
     </tbody>
   </table>
 </div>
+
+<%# <%= render 'shared/tapbar' %>
