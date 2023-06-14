@@ -13,7 +13,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
     @goal.user_id = current_user.id
     if @goal.save
-      redirect_to goal_path(@goal), notice: 'Goal created successfully.'
+      redirect_to new_credit_card_path, notice: 'Goal created successfully.'
     else
       render :new, status: :unprocessable_entity, notice: 'Failed to create'
     end
