@@ -26,35 +26,40 @@
     </thead>
 
     <tbody>
-    <% @operation = Operation.all %>
-    <% @credit_cards = CreditCard.all %>
+    <% @credit_card = CreditCard.where(user: current_user) %>
+    <% @operations = Operation.where(credit_card: @credit_card) %>
      <% @goals = Goal.all %>
     <% sum = [] %>
-    <% @operation.each do |element| %>
+    <% @operations.each do |element| %>
       <tr>
         <th scope="row"><%= element.id %></th>
         <td><%= element.operation_date.strftime('%d %b %Y') %></td>
         <td><%= element.operation_origin %></td>
         <td class="text-success">$ <%= format('%.2f', element.next_value[0]) %></td>
-        <td><%= @credit_cards.find(element.credit_card_id).card_number.gsub!(/.(?=....)/, '*') %></td>
+        <td><%= @credit_card.find(element.credit_card_id).card_number.gsub!(/.(?=....)/, '*') %></td>
         <td><%= @goal_name = @goals.find(element.goal_id).goal_name.capitalize  %></td>
         <% @goal_amount = @goals.find(element.goal_id).goal_amount  %>
         <% sum << element.next_value[0] %>
         <% end %>
       </tr>
       <div class="container text-center">
+      <% if sum.any? %>
         <h4 class="display-7">Saving Balance: $ <%= sum.sum  %></h4>
         <h4 class="display-7">Goal Percent: <%= number_to_percentage(sum.sum/@goal_amount, precision: 2) %></h4>
         <hr>
+        <% end %>
       </div>
 
+
       <div class="container">
+      <% if @goal_name != nil %>
       <h6> <%= @goal_name  %></h6>
         <div class="progress">
           <div class="progress-bar bg-success" role="progressbar" style=<%= "#{number_to_percentage(sum.sum/@goal_amount, precision: 0)}" %> aria-valuenow= <%= "#{number_to_percentage(sum.sum/@goal_amount, precision: 0)}" %> aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <hr>
       </div>
+      <% end %>
     </tbody>
   </table>
 </div>
