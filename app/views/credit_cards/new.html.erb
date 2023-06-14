@@ -1,44 +1,33 @@
-<%# <%= render 'menu' %>
-<%# <%= render 'card_center' %>
-
-<%# <div class="container"> %>
-  <%# <%= render 'form' %>
-<%# </div> %>
- <%# <div class="text-center mt-4">
-  <%= link_to 'Back', credit_cards_path, class: 'btn btn-primary' %>
-<%# </div> %>
-
-<%# <%= render 'shared/tapbar' %>
-<div class="container-new">
+<div class="container-new" data-controller="card">
 
     <div class="card-container-new">
 
-        <div class="front">
+        <div class="front" data-card-target="front">
             <div class="image">
                 <img src="chip.png" alt="">
                 <img src="mastercard.png" alt="">
             </div>
-            <div class="card-number-box-new">################</div>
+            <div class="card-number-box" data-card-target="cardNumberBox">################</div>
             <div class="flexbox">
                 <div class="box">
                     <span>CARD HOLDER NAME</span>
-                    <div class="card-holder-name-new">FULL NAME</div>
+                    <div class="card-holder-name" data-card-target="cardHolderName">FULL NAME</div>
                 </div>
                 <div class="box">
                     <span>EXPIRES</span>
                     <div class="expiration">
-                        <span class="exp-month">MM</span>
-                        <span class="exp-year">YY</span>
+                        <span class="exp-month" data-card-target="expMonth">MM</span>
+                        <span class="exp-year" data-card-target="expYear">YY</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="back">
+        <div class="back" data-card-target="back">
             <div class="stripe"></div>
-            <div class="box-new">
+            <div class="box">
                 <span>cvv</span>
-                <div class="cvv-box"></div>
+                <div class="cvv-box" data-card-target="cvvBox"></div>
                 <img src="mastercard.png" alt="">
             </div>
         </div>
@@ -48,16 +37,16 @@
     <form action="">
         <div class="inputBox">
             <span>Card Number</span>
-            <input type="text" maxlength="16" class="card-number-input-new">
+            <input type="text" maxlength="16" class="card-number-input" data-card-target="cardNumberInput">
         </div>
         <div class="inputBox">
             <span>Card Holder Name</span>
-            <input type="text" class="card-holder-input-new">
+            <input type="text" class="card-holder-input" data-card-target="cardHolderInput">
         </div>
         <div class="flexbox">
             <div class="inputBox">
                 <span>Exp. MM</span>
-                <select name="" id="" class="month-input-new">
+                <select name="" id="" class="month-input" data-card-target="monthInput">
                     <option value="month" selected disabled></option>
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -75,10 +64,8 @@
             </div>
             <div class="inputBox">
                 <span>Exp. YY</span>
-                <select name="" id="" class="year-input-new">
+                <select name="" id="" class="year-input" data-card-target="yearInput">
                     <option value="year" selected disabled></option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
                     <option value="2025">2025</option>
@@ -91,7 +78,7 @@
             </div>
             <div class="inputBox">
                 <span>CVV</span>
-                <input type="text" maxlength="4" class="cvv-input-new">
+                <input type="text" maxlength="4" class="cvv-input" data-card-target="cvvInput">
             </div>
         </div>
         <input type="submit" value="Add New Card" class="submit-btn">
