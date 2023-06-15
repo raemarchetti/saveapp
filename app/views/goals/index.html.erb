@@ -16,26 +16,21 @@
     <hr>
     <div class="row justify-content-center">
   <% @goals.each do |goal| %>
-    <div class="col-md-4 col-sm-12">
-      <div class="card mb-4">
-      <%= image_tag('sea_view_sunny.jpeg', alt:'')%>
-        <div class="card-body">
-        <h5 class="card-title"><%= goal.goal_name %></h5>
-        <p class="card-text">$<%= goal.goal_balance %></p>
-        <p class="card-text">$<%= goal.goal_amount.round(2) %></p>
-        </div>
+  <div class="col-md-4 col-sm-12">
+    <div class="card mb-4">
+    <%= image_tag('sea_view_sunny.jpg', alt:'')%>
+      <div class="card-body">
+      <h5 class="card-title"><%= goal.goal_name %></h5>
+      <p class="card-text">$<%= goal.goal_balance %></p>
+      <p class="card-text">$<%= goal.goal_amount.round(2) %></p>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
 <% else %>
   <h3>Create a goal</h3>
 <% end %>
 
-
-<%= link_to new_goal_path do %>
-  <div class="container rounded-circle p-3" style="background-color:#0066ff; width:80px; hight:90px">
-    <i class="fa-solid fa-plus fa-4x"></i>
-  </div>
-<% end %>
-
+<%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary text-center mt-4 d-grid gap-2' %>
+</div>
