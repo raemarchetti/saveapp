@@ -1,0 +1,191 @@
+*{
+  // font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+/*    text-transform: uppercase;*/
+}
+
+.container-new {
+  min-height: 100vh;
+  // background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding-bottom: 60px;
+}
+
+.container-new form{
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0,0,0,.1);
+  padding: 20px;
+  width: 600px;
+  padding-top: 160px;
+}
+
+.container-new form .inputBox{
+  margin-top: 20px;
+}
+
+.container-new form .inputBox span{
+  display: block;
+  color:#999;
+  padding-bottom: 5px;
+}
+
+.container-new form .inputBox input,
+.container-new form .inputBox select{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border:1px solid rgba(0,0,0,.3);
+  // color:#444;
+}
+
+.container-new form .flexbox{
+  display: flex;
+  gap:15px;
+}
+
+.container-new form .flexbox .inputBox{
+  flex:1 1 150px;
+}
+
+.container-new form .submit-btn{
+  width: 100%;
+  background:$blue;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color:#fff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .2s linear;
+}
+
+// .container-new form .submit-btn:hover{
+//   letter-spacing: 2px;
+//   opacity: .8;
+// }
+
+.container-new .card-container-new{
+  margin-bottom: -150px;
+  position: relative;
+  height: 250px;
+  width: 400px;
+}
+
+.container-new .card-container-new .front{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background:linear-gradient(45deg, #8A2BE2, #FF1493);
+  border-radius: 5px;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  padding:20px;
+  transform:perspective(1000px) rotateY(0deg);
+  transition:transform .4s ease-out;
+}
+
+.container-new .card-container-new .front .image{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.container-new .card-container-new .front .image img{
+  height: 50px;
+}
+
+.container-new .card-container-new .front .card-number-box{
+  padding:30px 0;
+  font-size: 22px;
+  color:#fff;
+}
+
+.container-new .card-container-new .front .flexbox{
+  display: flex;
+}
+
+.container-new .card-container-new .front .flexbox .box:nth-child(1){
+  margin-right: auto;
+}
+
+.container-new .card-container-new .front .flexbox .box{
+  font-size: 15px;
+  color:#fff;
+}
+
+.container-new .card-container-new .back{
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background:linear-gradient(45deg, #8A2BE2, #FF1493);
+  border-radius: 5px;
+  padding: 20px 0;
+  text-align: right;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  transform:perspective(1000px) rotateY(180deg);
+  transition:transform .4s ease-out;
+}
+
+.container-new .card-container-new .back .stripe{
+  background: #000;
+  width: 100%;
+  margin: 10px 0;
+  height: 50px;
+}
+
+.container-new .card-container-new .back .box {
+  padding: 0 20px;
+}
+
+.container-new .card-container-new .back .box span{
+  color:#fff;
+  font-size: 15px;
+}
+
+.container-new .card-container-new .back .box .cvv-box{
+  height: 50px;
+  padding: 10px;
+  margin-top: 5px;
+  color:#333;
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.container-new .card-container-new .back .box img{
+  margin-top: 30px;
+  height: 30px;
+}
+
+
+/* Mobile View + Responsive */
+
+
+@media screen and (max-width: 600px) {
+.container {
+  padding: 20px;
+}
+
+.container-new form {
+  width: 100%;
+  padding-top: 160px;
+}
+
+.container-new .card-container-new {
+  width: 90%;
+}
+}

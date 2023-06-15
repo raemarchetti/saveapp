@@ -1,11 +1,84 @@
-<%= render 'menu' %>
-<%= render 'card_center' %>
+<div class="container-new" data-controller="card">
+  <div class="card-container-new">
+    <div class="front" data-card-target="front">
+      <div class="image">
+        <%# <img src="chip.png" alt="">
+        <img src="mastercard.png" alt=""> %>
+        <img src="<%= image_path 'chip1.png' %>" alt="chip" />
+        <img src="<%= image_path 'mastercard.png' %>" alt="mastercard" />
 
-<div class="container">
-  <%= render 'form' %>
+      </div>
+        <div class="card-number-box" data-card-target="cardNumberBox">################</div>
+          <div class="flexbox">
+            <div class="box">
+              <span>CARD HOLDER NAME</span>
+            <div class="card-holder-name" data-card-target="cardHolderName">FULL NAME</div>
+            </div>
+              <div class="box">
+                <span>EXPIRES</span>
+                  <div class="expiration">
+                    <span class="exp-month" data-card-target="expMonth">MM</span>
+                    <span class="exp-year" data-card-target="expYear">YY</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="back" data-card-target="back">
+              <div class="stripe"></div>
+                <div class="box">
+                  <span>cvv</span>
+                <div class="cvv-box" data-card-target="cvvBox"></div>
+                  <img src="mastercard.png" alt="">
+                </div>
+              </div>
+            </div>
+          <form action="">
+            <div class="inputBox">
+              <span>Card Number</span>
+              <input type="text" maxlength="16" class="card-number-input" data-card-target="cardNumberInput">
+            </div>
+          <div class="inputBox">
+              <span>Card Holder Name</span>
+              <input type="text" class="card-holder-input" data-card-target="cardHolderInput">
+          </div>
+          <div class="flexbox">
+              <div class="inputBox">
+                  <span>Exp. MM</span>
+                  <select name="" id="" class="month-input" data-card-target="monthInput">
+                      <option value="month" selected disabled></option>
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                  </select>
+              </div>
+              <div class="inputBox">
+                  <span>Exp. YY</span>
+                  <select name="" id="" class="year-input" data-card-target="yearInput">
+                      <option value="year" selected disabled></option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                      <option value="2026">2026</option>
+                      <option value="2027">2027</option>
+                      <option value="2028">2028</option>
+                      <option value="2029">2029</option>
+                      <option value="2030">2030</option>
+                  </select>
+            </div>
+            <div class="inputBox">
+                <span>CVV</span>
+                <input type="text" maxlength="4" class="cvv-input" data-card-target="cvvInput">
+            </div>
+        </div>
+        <input type="submit" value="Add New Card" class="submit-btn">
+    </form>
 </div>
- <%# <div class="text-center mt-4">
-  <%= link_to 'Back', credit_cards_path, class: 'btn btn-primary' %>
-<%# </div> %>
-
-<%# <%= render 'shared/tapbar' %>

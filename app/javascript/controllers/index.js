@@ -7,6 +7,9 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import CardController from "./card_controller"
+application.register("card", CardController)
+
 import ObjectivesController from "./objectives_controller"
 application.register("objectives", ObjectivesController)
 
@@ -47,5 +50,3 @@ function changeSlide(direction) {
 
   sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
 }
-
-
