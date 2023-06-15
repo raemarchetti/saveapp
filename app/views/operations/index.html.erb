@@ -45,7 +45,8 @@
  <div class="container text-center">
       <% if sum.any? %>
         <h4 class="display-7">Saving Balance: $ <%= sum.sum  %></h4>
-        <h4 class="display-7">Goal Percent: <%= number_to_percentage(sum.sum/@goal_amount, precision: 2) %></h4>
+        <% @percent = 100 * sum.sum/@goal_amount %>
+        <h4 class="display-7">Goal Percent: <%= @percent %>%</h4>
         <hr>
         <% end %>
       </div>
