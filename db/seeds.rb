@@ -67,7 +67,7 @@ user = User.create!(
   # # # <<Create goals with pre-set parameters>>
   goal =
      Goal.create!(
-      goal_name: 'Travel', user: user, goal_amount: 1500, goal_balance: 0
+      goal_name: 'Christmas Gift', user: user, goal_amount: 100, goal_balance: 0
     )
 
   # # # <<Create transactions with pre-set parameters>>
