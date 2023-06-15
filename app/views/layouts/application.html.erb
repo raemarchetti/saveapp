@@ -16,7 +16,10 @@
     <%= render "shared/navbar" unless @disable_nav %>
 
       <%= render "shared/flashes" %>
-      <%= yield %>
+
+      <div class="main-container justify-content-center">
+        <%= yield %>
+      </div>
 
       <%
         paths = [
@@ -39,6 +42,6 @@
       <%= render 'shared/tapbar' %>
       <% end %>
 
- 
+
   </body>
 </html>
