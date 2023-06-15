@@ -1,4 +1,4 @@
-<div class="container-goal">
+<div class="container">
   <div class="container text-center">
     <div class="title-index d-flex justify-content-between mb-3 align-items-center">
       <%= link_to :back do %>
@@ -29,14 +29,14 @@
     <% @operations = Operation.where(credit_card: @credit_card) %>
     <% @goals = Goal.all %>
     <% sum = [] %>
-    <% @operation.each do |element| %>
+    <% @operations.each do |element| %>
       <tr>
         <tr>
           <th scope="row"><%= link_to "Details", operation_path(element.id), class: "btn btn-outline-primary btn-sm"%></th>
           <td><%= element.operation_date.strftime('%d %b %Y') %></td>
           <td><%= element.operation_origin %></td>
           <td class="text-success">$ <%= format('%.2f', element.next_value[0]) %></td>
-          <% @credit_cards.find(element.credit_card_id).card_number.gsub!(/.(?=....)/, '*') %>
+          <% @credit_card.find(element.credit_card_id).card_number.gsub!(/.(?=....)/, '*') %>
           <% @goal_name = @goals.find(element.goal_id).goal_name.capitalize  %>
           <% @goal_amount = @goals.find(element.goal_id).goal_amount  %>
           <% sum << element.next_value[0] %>

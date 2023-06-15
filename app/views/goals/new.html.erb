@@ -1,6 +1,6 @@
 <div class="container" data-controller="objectives">
 
-  <div class="container-goal">
+  <div class="container">
     <div class="title">
       <button>
         <%= link_to image_tag("left-arrow.svg", alt: "left-arrow", size: ""), welcome_path %>
@@ -8,25 +8,28 @@
       <button>
         <%= link_to image_tag("question.svg", alt: "question mark"), welcome_path %>
       </button>
+    </div>
   </div>
-  <div class="question">
-      <p>What's your goal?</p>
-    </div>
-    <div class="objectives">
-      <button data-action="click->objectives#home" >Home
-        <%= image_tag "house.svg", alt: "house" %>
-      </button>
-      <button data-action="click->objectives#travel">Travel
-        <%= image_tag "world.svg", alt: "world map" %>
-      </button>
-      <button data-action="click->objectives#emergency">Emergency
-        <%= image_tag "cash.svg", alt: "cash" %>
-      </button>
-    </div>
 
-  <%= render 'form' %>
+  <div class="question text-center">
+      <h3>What's your goal?</h3>
+  </div>
 
+  <div class="objectives justify-content-center">
+    <button data-action="click->objectives#home" >Home
+      <%= image_tag "house.svg", alt: "house" %>
+    </button>
+    <button data-action="click->objectives#travel">Travel
+      <%= image_tag "world.svg", alt: "world map" %>
+    </button>
+    <button data-action="click->objectives#emergency">Emergency
+      <%= image_tag "cash.svg", alt: "cash" %>
+    </button>
+  </div>
 
+  <div class="container">
+    <%= render 'form' %>
+  </div>
 
   <div class="container text-center">
     By submitting this application you confirm that you are authorized to share this information and agree with our Term and Conditions

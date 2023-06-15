@@ -1,11 +1,8 @@
-<div class="container">
+
   <%= render "shared/menu" %>
-
-<% if @credit_card.user == current_user%>
-  <%= render 'card' %>
-  <%= render 'card_info' %>
-  <% else %>
-  <p class = "justify-content-center">You don't have any credit cards yet.</p>
-<% end %>
-
-</div>
+  <% if @credit_card.user == current_user%>
+    <%= render 'card' %>
+    <%= render 'card_info' %>
+    <% else %>
+    <p class = "justify-content-center">You don't have any credit cards yet.</p>
+  <% end %>
