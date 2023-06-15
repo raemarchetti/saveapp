@@ -57,7 +57,7 @@
 
 .container-new form .submit-btn{
   width: 100%;
-  background:linear-gradient(45deg, #1E90ff, #00Bfff);
+  background:$blue;
   margin-top: 20px;
   padding: 10px;
   font-size: 20px;
@@ -67,10 +67,10 @@
   transition: .2s linear;
 }
 
-.container-new form .submit-btn:hover{
-  letter-spacing: 2px;
-  opacity: .8;
-}
+// .container-new form .submit-btn:hover{
+//   letter-spacing: 2px;
+//   opacity: .8;
+// }
 
 .container-new .card-container-new{
   margin-bottom: -150px;
@@ -101,7 +101,7 @@
   padding-top: 10px;
 }
 
-.container-new .card-container-new .front .image-new img{
+.container-new .card-container-new .front .image img{
   height: 50px;
 }
 
