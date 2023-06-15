@@ -33,7 +33,7 @@ user = User.create!(
 # # # <<Create a credit card for our seed user>>
   credit_card = CreditCard.create!(
     card_number: Faker::Stripe.valid_card,
-    card_holder_name: "Jane Doe",
+    card_holder_name: "Mariana Milani",
     expiration_date: Faker::Date.between(from: Date.today, to: 10.years.from_now).strftime('%m/%y'),
     cvv: Faker::Stripe.ccv,
     user_id: user.id
@@ -67,7 +67,7 @@ user = User.create!(
   # # # <<Create goals with pre-set parameters>>
   goal =
      Goal.create!(
-      goal_name: 'Travel', user: user, goal_amount: 1500, goal_balance: 0
+      goal_name: 'Christmas Gift', user: user, goal_amount: 100, goal_balance: 0
     )
 
   # # # <<Create transactions with pre-set parameters>>
