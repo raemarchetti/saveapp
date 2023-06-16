@@ -4,7 +4,6 @@ class OperationsController < ApplicationController
 
   def index
     credit_card = CreditCard.find(params[:credit_card_id])
-    raise
     @operations = Operation.where(credit_card: credit_card)
   end
 
