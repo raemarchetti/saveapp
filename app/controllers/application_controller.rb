@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     # stored_location_for(resource) || welcome_path
     welcome_path
   end
+
+  def disable_nav
+    @disable_nav = true
+  end
 end
