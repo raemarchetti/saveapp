@@ -16,7 +16,7 @@ class CreditCardsController < ApplicationController
     @credit_card.user_id = current_user.id
 
     if @credit_card.save
-      redirect_to credit_cards_path, notice: 'Credit card was successfully linked.'
+      redirect_to credit_card_path(@credit_card), notice: 'Credit card was successfully linked.'
     else
       render :new, status: :unprocessable_entity
     end
