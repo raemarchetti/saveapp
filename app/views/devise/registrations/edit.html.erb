@@ -6,7 +6,7 @@
     <div class="col-10 text1 text-center">
       <h4 class= "h4 fw-lighter">Profile</h4>
     </div>
-  <%= link_to profile_path do %>
+  <%= link_to contact_path do %>
     <%= image_tag("question.svg", alt: "question-mark", size:"") %>
   <% end %>
   </div>
@@ -47,5 +47,4 @@
 
 <div class="form-links">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
 
-<%= link_to "Back", :back %>
 </div>
