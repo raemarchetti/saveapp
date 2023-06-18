@@ -20,11 +20,23 @@
   <% @goals.each do |goal| %>
   <div class="col-md-4 col-sm-12">
     <div class="card mb-4">
-    <%= image_tag('sea_view_sunny.jpg', alt:'')%>
+    <%= image_tag('savings-pig.gif', alt:'')%>
       <div class="card-body">
       <h5 class="card-title"><%= goal.goal_name %></h5>
-      <p class="card-text">$<%= goal.goal_balance %></p>
-      <p class="card-text">$<%= goal.goal_amount.round(2) %></p>
+      <% sum = [] %>
+      <% @credit_card = CreditCard.where(user: current_user) %>
+      <% @operations = Operation.where(credit_card: @credit_card) %>
+      <% @operations.each do |element| %>
+        <% sum << element.next_value[0] %>
+      <% end %>
+      <% @goal_balance = sum.sum %>
+      <p class="card-text">Balance: $<%= @goal_balance %></p>
+      <p class="card-text">Amount: $<%= goal.goal_amount.round(2) %></p>
+      <p>
+        <%= link_to edit_goal_path(goal.id) do %>
+         <p class="icon-goal-card"> <i class="fa-solid fa-pen-to-square fa-2xl"></i> </p>
+        <% end %>
+      </p>
       </div>
     </div>
   </div>
