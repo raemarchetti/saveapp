@@ -14,7 +14,7 @@ class GoalsController < ApplicationController
     @goal.user_id = current_user.id
     @credit_card = CreditCard.all
     if @goal.save
-      redirect_to credit_card_path(CreditCard.last.id), notice: 'Goal created successfully.'
+      redirect_to new_credit_card_path(CreditCard.last.id), notice: 'Goal created successfully.'
     else
       render :new, status: :unprocessable_entity, notice: 'Failed to create'
     end
