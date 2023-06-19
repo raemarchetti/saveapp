@@ -1,8 +1,24 @@
+<div class="container text-center">
+  <div class="title-index d-flex justify-content-between mb-3 align-items-center">
+    <%= link_to :back do %>
+      <%= image_tag("left-arrow.svg", alt: "left-arrow") %>
+    <% end %>
+    <div class="col-10 text1 text-center">
+      <h4 class= "h4 fw-lighter">Operations</h4>
+    </div>
+
+    <%= link_to contact_path do %>
+      <%= image_tag("question.svg", alt: "question mark") %>
+    <% end %>
+
+  </div>
+</div>
+
 <div class="container">
   <% @credit_cards = CreditCard.all %>
   <% @goals = Goal.all %>
   <div class="card-product">
-    <img src="https://img.freepik.com/free-vector/illustration-financial-concept_53876-5913.jpg?w=740&t=st=1686683898~exp=1686684498~hmac=256d7261978c951d66a0ef5b2345dcd26d393df8228b38bf8924c46a39c9c745" />
+    <%= image_tag("saveapp_coin.png", alt:"logo") %>
     <div class="card-product-infos">
       <h2>Origin: <%= @operation.operation_origin %></h2>
       <p>Amount: <%= number_to_currency(@operation.operation_amount, unit: '$', precision: 2) %></p>
