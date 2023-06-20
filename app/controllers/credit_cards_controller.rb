@@ -3,7 +3,8 @@ class CreditCardsController < ApplicationController
   before_action :set_credit_card, only: [:show, :edit, :update, :destroy]
 
   def index
-    @credit_cards = CreditCard.all
+    @user = User.find(params[:user_id])
+    @credit_cards = @user.credit_cards
     # add a filter for user, when more than 1 credit_card
   end
 
@@ -16,7 +17,7 @@ class CreditCardsController < ApplicationController
     @credit_card.user_id = current_user.id
 
     if @credit_card.save
-      redirect_to credit_cards_path, notice: 'Credit card was successfully linked.'
+      redirect_to credit_cards_path(user_id: current_user.id), notice: 'Credit card was successfully linked.'
     else
       render :new, status: :unprocessable_entity
     end
