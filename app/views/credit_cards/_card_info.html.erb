@@ -1,13 +1,13 @@
  <div class="container list-card">
     <div>
       <%= image_tag 'credit-card2.svg', alt: 'credit card' %>
-      <h6 class="fw-lighter text-bn">Card Number: <%=@credit_card.card_number %></h6>
+      <h6 class="fw-lighter text-bn fs-6">Card Number: <%=@credit_card.card_number %></h6>
     </div>
   <%# <div>
     <p>Saving Balance</p>
     <%= @goal.goal_balance %>
   <%# </div> %>
-  <div class='text-bn'>
+  <div class='text-bn fs-6'>
   <%= image_tag 'credit-card.svg', alt: 'credit card' %>
     <p>Limit: $ 5.000,00</p>
   </div>
@@ -17,11 +17,11 @@
     <%# <p>Change Card</p> %>
     <%# <%= link_to 'Delete', destroy_credit_card_path(credit_card), method: :delete, data: { confirm: 'Are you sure?' } %>
     <%# <%= button_to "Delete", credit_card_path(@credit_card), method: :delete, class: "btn btn-primary" %>
-    <%= link_to "Change Card", new_credit_card_path(@credit_card), class: 'text-bn' %>
+    <%= link_to "Change Card", new_credit_card_path(@credit_card), class: 'text-bn fs-6' %>
   </button>
-  <button class='change'>
+  <button class='change btn btn-outline-primary mr-3 fs-6'>
     <%= image_tag 'store.svg', alt: 'store' %>
-    <%= link_to "Operations", credit_card_operations_path(@credit_card), class: 'text-bn' %>
+    <%= link_to "Operations", credit_card_operations_path(@credit_card), class: 'text-bn fs-6' %>
   </button>
   </div>
 </div>
