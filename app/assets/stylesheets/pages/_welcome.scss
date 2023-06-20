@@ -1,8 +1,8 @@
-body{
-  padding: 0;
-  margin: 0;
-  // overflow: hidden;
-}
+// body{
+//   padding: 0;
+//   margin: 0;
+//   // overflow: hidden;
+// }
 
 .container-home{
   display: flex;
@@ -45,6 +45,7 @@ body{
 .container-home footer{
   bottom: 1rem;
   position: absolute;
+  justify-content: center;
 }
 
 #button-welcome:hover {

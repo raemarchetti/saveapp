@@ -1,21 +1,23 @@
 <%= render 'menu' %>
-<div class="container">
-  <div class="container text-center mt-5">
-    <h1 class="mb-4">Credit Cards</h1>
-
+<div class="container mt-5">
+  <div class="d-flex flex-column align-items-center">
+    <h5 class="mb-4 text-secondary">Credit Cards</h5>
     <% @credit_cards.each do |credit_card| %>
-      <ul class="list-group mb-3">
-        <li class="list-group-item">Card Number: <%= credit_card.card_number %></li>
-        <li class="list-group-item">Expiration Date: <%= credit_card.expiration_date %></li>
-        <li class="list-group-item">
-          <div class="d-flex justify-content-center">
-
-          <%= link_to 'Show', credit_card, class: 'btn btn-info btn-sm mr-2' %>
-          <%= link_to 'Edit', edit_credit_card_path(credit_card), class: 'btn btn-warning btn-sm mr-2' %>
-          <%= button_to 'Delete', credit_card, method: :delete, class: 'btn btn-danger btn-sm' %>
-          </div>
-        </li>
-      </ul>
+      <div class="card mb-4 w-100 shadow">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">Card Number: <%= credit_card.card_number %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Expiration Date: <%= credit_card.expiration_date %></li>
+          <li class="list-group-item">
+            <div class="d-flex justify-content-around">
+              <%= link_to '🔍', credit_card, class: 'btn btn-outline-light' %>
+              <%= link_to '✏️', edit_credit_card_path(credit_card), class: 'btn btn-outline-light' %>
+              <%= button_to '🗑️', credit_card, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-light' %>
+            </div>
+          </li>
+        </ul>
+      </div>
     <% end %>
   </div>
 </div>
