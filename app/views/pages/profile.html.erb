@@ -44,7 +44,7 @@
       <hr>
       <div class="d-flex justify-content-between w-100">
           <p class="m-0 text-secondary">Card Center</p>
-          <p class="m-0"><%= link_to "See Your Linked Cards", credit_cards_path, class:"btn btn-outline-primary btn-sm" %></p>
+          <p class="m-0"><%= link_to "See Your Linked Cards", credit_cards_path(user_id: current_user.id), class:"btn btn-outline-primary btn-sm" %></p>
       </div>
     </div>
   </div>
