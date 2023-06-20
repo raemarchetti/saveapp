@@ -1,4 +1,4 @@
-if Rails.env.development?
+# if Rails.env.development?
 
   # # # <<Clear database>>
 Operation.destroy_all
