@@ -1,13 +1,35 @@
 <div class="container">
-   <%= link_to :back do %>
-    <%= image_tag("left-arrow.svg", alt: "left-arrow") %>
+<div class="title-index d-flex justify-content-between mb-3 align-items-center">
+    <%= link_to :back do %>
+      <%= image_tag("left-arrow.svg", alt: "left-arrow") %>
     <% end %>
-  <h1>Update Goal<%= @goal.goal_name %></h1>
+    <div class="col-10 text1 text-center">
+      <h4 class= "h4 fw-lighter">Goals</h4>
+    </div>
 
-<%= simple_form_for(@goal) do |form| %>
-  <%= form.input :goal_name %>
-  <%= form.input :goal_amount %>
+    <%= link_to 'contact' do %>
+      <%= image_tag("question.svg", alt: "question_mark") %>
+    <% end %>
 
-  <%= form.button :submit, "Update Goal", class: "btn btn-primary" %>
-<% end %>
+  </div>
+ <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-titler"><%= @goal.goal_name %></h4>
+
+          <%= simple_form_for(@goal) do |form| %>
+            <div class="form-group">
+              <%= form.input :goal_name, label: "Goal Name", input_html: { class: 'form-control' } %>
+            </div>
+            <div class="form-group">
+              <%= form.input :goal_amount, label: "Goal Amount", input_html: { class: 'form-control' } %>
+            </div>
+
+            <%= form.button :submit, "Update Goal", class: "btn btn-primary mt-3" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

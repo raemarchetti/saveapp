@@ -39,7 +39,9 @@
     </div>
 
     <div class="text-center mt-4 d-grid gap-2">
-      <%= form.button :submit, <i class="fa-solid fa-plus-large" style="color: #aacbdf;"></i>, class: 'btn btn-primary' %>
+      <%= button_tag(type: 'submit', class: 'btn btn-primary', data: { confirm: 'Are you sure?' }) do %>
+      Submit
+      <% end %>
     </div>
 
   <% end %>
