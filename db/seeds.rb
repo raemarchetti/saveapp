@@ -186,4 +186,3 @@ user = User.create!(
     goal: goal
   )
   end
-end
