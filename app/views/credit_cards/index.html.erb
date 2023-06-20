@@ -2,22 +2,27 @@
 <div class="container mt-5">
   <div class="d-flex flex-column align-items-center">
     <h5 class="mb-4 text-secondary">Credit Cards</h5>
-    <% @credit_cards.each do |credit_card| %>
-      <div class="card mb-4 w-100 shadow">
-        <div class="card-header bg-primary text-white">
-          <h5 class="card-title mb-0">Card Number: <%= credit_card.card_number %></h5>
+
+    <% if @credit_cards.empty?%>
+      <p class = "justify-content-center">You don't have any credit cards yet.</p>
+    <% else %>
+      <% @credit_cards.each do |credit_card| %>
+        <div class="card mb-4 w-100 shadow">
+          <div class="card-header bg-primary text-white">
+            <h5 class="card-title mb-0">Card Number: <%= credit_card.card_number %></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Expiration Date: <%= credit_card.expiration_date %></li>
+            <li class="list-group-item">
+              <div class="d-flex justify-content-around">
+                <%= link_to '🔍', credit_card, class: 'btn btn-outline-light' %>
+                <%= link_to '✏️', edit_credit_card_path(credit_card), class: 'btn btn-outline-light' %>
+                <%= button_to '🗑️', credit_card, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-light' %>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Expiration Date: <%= credit_card.expiration_date %></li>
-          <li class="list-group-item">
-            <div class="d-flex justify-content-around">
-              <%= link_to '🔍', credit_card, class: 'btn btn-outline-light' %>
-              <%= link_to '✏️', edit_credit_card_path(credit_card), class: 'btn btn-outline-light' %>
-              <%= button_to '🗑️', credit_card, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-light' %>
-            </div>
-          </li>
-        </ul>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
