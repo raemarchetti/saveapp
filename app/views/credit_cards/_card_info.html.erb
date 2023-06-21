@@ -19,7 +19,7 @@
     <%# <%= button_to "Delete", credit_card_path(@credit_card), method: :delete, class: "btn btn-primary" %>
     <%= link_to "Change Card", new_credit_card_path(@credit_card), class: 'text-bn fs-6' %>
   </button>
-  <button class='change btn btn-outline-primary mr-3 fs-6'>
+  <button class='change'>
     <%= image_tag 'store.svg', alt: 'store' %>
     <%= link_to "Operations", credit_card_operations_path(@credit_card), class: 'text-bn fs-6' %>
   </button>
