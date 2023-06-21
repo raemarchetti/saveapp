@@ -17,10 +17,10 @@
   <div class="row justify-content-center">
   <% @goals.each do |goal| %>
   <div class="col-md-4 col-sm-12">
-    <div class="card mb-4">
-    <%= image_tag('savings-pig.gif', alt:'')%>
-      <div class="card-body">
-      <h5 class="card-title"><%= goal.goal_name %></h5>
+    <div class="card-trip mb-4">
+    <%= image_tag('savings-pig-small.gif', alt:'')%>
+      <div class="container pt-1">
+      <h2><%= goal.goal_name %></h2>
       <% sum = [] %>
       <% @credit_card = CreditCard.where(user: current_user) %>
       <% @operations = Operation.where(credit_card: @credit_card) %>
@@ -28,13 +28,9 @@
         <% sum << element.next_value[0] %>
       <% end %>
       <% @goal_balance = sum.sum %>
-      <p class="card-text">Balance: $<%= @goal_balance %></p>
-      <p class="card-text">Amount: $<%= goal.goal_amount.round(2) %></p>
-      <p>
-        <%= link_to edit_goal_path(goal.id) do %>
-         <p class="icon-goal-card"> <i class="fa-solid fa-pen-to-square fa-2xl"></i> </p>
-        <% end %>
-      </p>
+      <p>Balance: $<%= @goal_balance %></p>
+      <p>Amount: $<%= goal.goal_amount.round(2) %></p>
+      <p> <%= link_to '✏️', edit_goal_path(goal.id), class: 'btn btn-outline-light' %></p>
       </div>
     </div>
   </div>
@@ -46,3 +42,6 @@
 
 <%= link_to "Add a Goal", new_goal_path, class:'btn btn-primary text-center mt-4 d-grid gap-2' %>
 </div>
+
+<%# get space between btn "Add a Goal" and the Tapbar %>
+.white-div
