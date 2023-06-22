@@ -51,14 +51,13 @@
         <% end %>
       </div>
       <div class="container mt-1">
-      <% if @goal_name != nil %>
       <h6> <%= @goal_name  %></h6>
         <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" style=<%= "#{ @percent }" %> aria-valuenow= <%= "#{number_to_percentage(sum.sum/@goal_amount, precision: 0)}" %> aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar bg-success" role="progressbar" style="width: <%= "#{ @percent.ceil}%"  %>" aria-valuenow="width: <%= "#{ @percent.ceil}%"  %>" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <hr>
       </div>
-      <% end %>
+
     </tbody>
   </table>
 </div>
