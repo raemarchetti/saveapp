@@ -1,18 +1,18 @@
 <%= render 'menu' %>
 <div class="container mt-5">
   <div class="d-flex flex-column align-items-center">
-    <h5 class="mb-4 text-secondary">Credit Cards</h5>
+    <h5 class="mb-4 text-secondary fw-lighter">Credit Cards</h5>
 
     <% if @credit_cards.empty?%>
-      <p class = "justify-content-center">You don't have any credit cards yet.</p>
+      <p class = "justify-content-center fw-lighter">⚠️ You don't have any credit cards yet.</p>
     <% else %>
       <% @credit_cards.each do |credit_card| %>
         <div class="card mb-4 w-100 shadow">
           <div class="card-header bg-primary text-white">
-            <h5 class="card-title mb-0">Card Number: <%= credit_card.card_number %></h5>
+            <h6 class="card-title mb-0">Card Number: <%= credit_card.card_number %></h6>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Expiration Date: <%= credit_card.expiration_date %></li>
+            <li class="list-group-item fw-lighter">Expiration Date: <%= credit_card.expiration_date %></li>
             <li class="list-group-item">
               <div class="d-flex justify-content-around">
                 <%= link_to '🔍', credit_card, class: 'btn btn-outline-light' %>
@@ -24,6 +24,6 @@
         </div>
       <% end %>
     <% end %>
-    <p><%= link_to 'New Credit Card', new_credit_card_path, class:'btn btn-primary text-center mt-4 d-grid gap-2' %></p>
+    <p><%= link_to 'Add Card', new_credit_card_path, class:'btn btn-primary text-center mt-4 d-grid gap-2' %></p>
   </div>
 </div>

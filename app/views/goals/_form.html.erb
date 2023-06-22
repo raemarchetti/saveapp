@@ -1,13 +1,15 @@
-<div class="container mt-4 text-center">
-  <div class="row">
-    <div class="col-6 m-auto">
-      <div class="goal-form">
-        <%= simple_form_for(@goal, url: goals_path, local: true) do |form| %>
-          <%= form.input :goal_name, input_html:  { data: { target: "objectives.goal" } } %>
-          <%= form.input :goal_amount, as: :decimal, input_html: { step: '0.01' } %>
-          <%= form.button :submit, 'Create Goal', class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <%# <div class="card">
+        <div class="card-body"> %>
+          <%= simple_form_for(@goal, url: goals_path, local: true) do |form| %>
+            <%= form.input :goal_name, label: 'Goal Name', required: false, label_html: { class: 'h6 font-weight-normal' }, input_html: { class: 'form-control', data: { target: "objectives.goal" } } %>
+            <%= form.input :goal_amount, label: 'Goal Amount', required: false, as: :decimal, label_html: { class: 'h6 font-weight-normal' }, input_html: { class: 'form-control', step: '0.01' } %>
+            <%= form.button :submit, 'Add New Goal', class: 'btn btn-primary btn-block mt-4' %>
+          <% end %>
+        <%# </div>
+      </div> %>
     </div>
   </div>
 </div>
