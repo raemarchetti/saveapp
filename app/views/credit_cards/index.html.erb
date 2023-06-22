@@ -1,10 +1,10 @@
 <%= render 'menu' %>
 <div class="container mt-5">
   <div class="d-flex flex-column align-items-center">
-    <h5 class="mb-4 text-secondary">Credit Cards</h5>
+    <h5 class="mb-4 text-secondary fw-lighter">Credit Cards</h5>
 
     <% if @credit_cards.empty?%>
-      <p class = "justify-content-center">You don't have any credit cards yet.</p>
+      <p class = "justify-content-center fw-lighter">⚠️ You don't have any credit cards yet.</p>
     <% else %>
       <% @credit_cards.each do |credit_card| %>
         <div class="card mb-4 w-100 shadow">
@@ -27,4 +27,3 @@
     <p><%= link_to 'Add Card', new_credit_card_path, class:'btn btn-primary text-center mt-4 d-grid gap-2' %></p>
   </div>
 </div>
-
