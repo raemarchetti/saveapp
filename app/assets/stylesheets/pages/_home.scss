@@ -145,3 +145,19 @@ button:focus {
     opacity: 0;
   }
 }
+
+/* Mobile */
+@media (max-width: 767px) {
+  .sidebar, .controls {
+    width: 100%;
+  }
+
+  .main-slide {
+    display: none;
+  }
+
+  .container-page .controls button {
+    left: 0;
+    top: 0; 
+  }
+}
