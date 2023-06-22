@@ -20,7 +20,7 @@
     <div class="card-trip mb-4">
     <%= image_tag('savings-pig.gif', alt:'')%>
       <div class="container pt-1">
-      <h2><%= goal.goal_name %></h2>
+      <h3><%= goal.goal_name %></h3>
       <% sum = [] %>
       <% @credit_card = CreditCard.where(user: current_user) %>
       <% @operations = Operation.where(credit_card: @credit_card) %>
@@ -28,8 +28,8 @@
         <% sum << element.next_value[0] %>
       <% end %>
       <% @goal_balance = sum.sum %>
-      <p>Balance: $<%= @goal_balance %></p>
-      <p>Amount: $<%= goal.goal_amount.round(2) %></p>
+      <h6 class="fw-lighter">Balance: $<%= @goal_balance %></h6>
+      <h6 class="fw-lighter">Amount: $<%= goal.goal_amount.round(2) %></h6>
       <p> <%= link_to '✏️', edit_goal_path(goal.id), class: 'btn btn-outline-light' %></p>
       </div>
     </div>
