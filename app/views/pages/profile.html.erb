@@ -15,7 +15,11 @@
 
   <div class="mt-3 p-3 d-flex justify-content-center position-relative">
     <div class="avatar-wrapper">
-      <%= image_tag "avatar.jpg", class: "profile_avatar"%>
+      <% if current_user.email == "mari@mail.com" %>
+        <%= image_tag "avatar.jpg", class: "profile_avatar"%>
+      <% else %>
+        <%= image_tag "avatarX.png", class: "profile_avatar"%>
+      <% end %>
     </div>
     <h3 class="h3 fw-normal align-text-center mt-3"><%= @user.name %></h3>
   </div>
